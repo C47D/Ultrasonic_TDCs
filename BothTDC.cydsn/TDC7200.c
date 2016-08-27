@@ -4,6 +4,44 @@
 #define SLAVE_TDC7200 0x01
 #define SLAVE_DESELECT 0x03
 
+#define ENABLE_TDC7200 0x01
+
+void TDC7200_Start(TDC7200_INIT_t* tdc){
+    TDC7200_setConfig(tdc);
+    TDC7200_Enable();
+}
+
+void TDC7200_Enable(void){
+    /* El pin EN del TDC7200 debe estar a 1 lógico para poder usarlo*/
+    Ctrl_Write(ENABLE_TDC7200);
+}
+
+void TDC7200_setConfig(TDC7200_INIT_t* tdc){
+    TDC7200_setCONFIG1(tdc->CONFIG_1);
+    TDC7200_setCONFIG2(tdc->CONFIG_2);
+    TDC7200_setINT_STATUS(tdc->INT_STATUS);
+    TDC7200_setINT_MASK(tdc->INT_MASK);
+    TDC7200_setCOARSE_CNTR_OVF_H(tdc->COARSE_CNTR_OVF_H);
+    TDC7200_setCOARSE_CNTR_OVF_L(tdc->COARSE_CNTR_OVF_L);
+    TDC7200_setCLOCK_CNTR_OVF_H(tdc->CLOCK_CNTR_OVF_H);
+    TDC7200_setCLOCK_CNTR_OVF_L(tdc->CLOCK_CNTR_OVF_L);
+    TDC7200_setCLOCK_CNTR_STOP_MASK_H(tdc->CLOCK_CNTR_STOP_MASK_H);
+    TDC7200_setCLOCK_CNTR_STOP_MASK_L(tdc->CLOCK_CNTR_STOP_MASK_L);
+}
+
+void TDC7200_getConfig(TDC7200_INIT_t* tdc){
+    tdc->CONFIG_1 = TDC7200_getCONFIG1();
+    tdc->CONFIG_2 = TDC7200_getCONFIG2();
+    tdc->INT_STATUS = TDC7200_getINT_STATUS();
+    tdc->INT_MASK = TDC7200_getINT_MASK();
+    tdc->COARSE_CNTR_OVF_H = TDC7200_getCOARSE_CNTR_OVF_H();
+    tdc->COARSE_CNTR_OVF_L = TDC7200_getCOARSE_CNTR_OVF_L();
+    tdc->CLOCK_CNTR_OVF_H = TDC7200_getCLOCK_CNTR_OVF_H();
+    tdc->CLOCK_CNTR_OVF_L = TDC7200_getCLOCK_CNTR_OVF_L();
+    tdc->CLOCK_CNTR_STOP_MASK_H = TDC7200_getCLOCK_CNTR_STOP_MASK_H();
+    tdc->CLOCK_CNTR_STOP_MASK_L = TDC7200_getCLOCK_CNTR_STOP_MASK_L();
+}
+
 /* Funciones para obtener el valor de los registros */
 uint8_t TDC7200_getCONFIG1(void){
     return TDC7200_ReadSingleRegister(TDC7200_CONFIG1_ADDR);
@@ -210,10 +248,6 @@ void TDC7200_ReadAutoincrementRegister(uint8_t regAddr, uint8_t *data, size_t si
     }
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
     Ctrl_S_Write(SLAVE_DESELECT);
-}
-
-void TDC7200_Start(TDC7200_INIT_t tdc){
-    
 }
 
 bool TDC7200_readToggleSetting(uint8_t toggle);

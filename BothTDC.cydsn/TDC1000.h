@@ -243,6 +243,29 @@ typedef struct{
 }TDC1000_INIT_t;
 
 /* Functions */
+void TDC1000_Start(TDC1000_INIT_t* tdc);
+void TDC1000_Enable(void);
+void TDC1000_setConfig(TDC1000_INIT_t* tdc);
+void TDC1000_getConfig(TDC1000_INIT_t* tdc);
+void TDC1000_Reset(void);
+uint8_t TDC1000_readModeSelect(void);
+uint8_t TDC1000_readTXFreqDiv(void);
+uint8_t TDC1000_readNumTX(void);
+uint8_t TDC1000_readNumAvg(void);
+uint8_t TDC1000_readNumRX(void);
+uint8_t TDC1000_readEchoQualThld(void);
+uint8_t TDC1000_readTXPhShiftPos(void);
+uint8_t TDC1000_readPGAGain(void);
+uint8_t TDC1000_readTimingReg(void);
+uint8_t TDC1000_readShortToFBlankPeriod(void);
+uint8_t TDC1000_readToFTimeoutCtrl(void);
+uint8_t TDC1000_readAutozeroPeriod(void);
+void TDC1000_setEnable(bool enable);
+bool TDC1000_getEnable(void);
+bool TDC1000_readChannelSelect(void);
+uint8_t TDC1000_readClockFreqIn(void);
+void TDC1000_setClockFreqIn(uint32_t freq);
+
 void TDC1000_setCONFIG_0(uint8_t data);
 void TDC1000_setCONFIG_1(uint8_t data);
 void TDC1000_setCONFIG_2(uint8_t data);
@@ -263,26 +286,6 @@ uint8_t TDC1000_getTOF_0(void);
 uint8_t TDC1000_getERROR_FLAGS(void);
 uint8_t TDC1000_getTIMEOUT(void);
 uint8_t TDC1000_getCLOCK_RATE(void);
-void TDC1000_Start(TDC1000_INIT_t tdc);
-
-void TDC1000_reset(void);
-uint8_t TDC1000_readModeSelect(void);
-uint8_t TDC1000_readTXFreqDiv(void);
-uint8_t TDC1000_readNumTX(void);
-uint8_t TDC1000_readNumAvg(void);
-uint8_t TDC1000_readNumRX(void);
-uint8_t TDC1000_readEchoQualThld(void);
-uint8_t TDC1000_readTXPhShiftPos(void);
-uint8_t TDC1000_readPGAGain(void);
-uint8_t TDC1000_readTimingReg(void);
-uint8_t TDC1000_readShortToFBlankPeriod(void);
-uint8_t TDC1000_readToFTimeoutCtrl(void);
-uint8_t TDC1000_readAutozeroPeriod(void);
-void TDC1000_setEnable(bool enable);
-bool TDC1000_getEnable(void);
-bool TDC1000_readChannelSelect(void);
-uint8_t TDC1000_readClockFreqIn(void);
-void TDC1000_setClockFreqIn(uint32_t freq);
 
 void TDC1000_WriteSingleRegister(uint8_t regAddr, uint8_t data);
 uint8_t TDC1000_ReadSingleRegister(uint8_t regAddr);

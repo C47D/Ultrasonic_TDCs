@@ -145,6 +145,37 @@ typedef struct{
     uint8_t CLOCK_CNTR_STOP_MASK_L;
 }TDC7200_INIT_t;
 
+/* Funciones especiales, diseñadas para ser las unicas usadas por el usuario */
+void TDC7200_Start(TDC7200_INIT_t* tdc);
+void TDC7200_setConfig(TDC7200_INIT_t* tdc);
+void TDC7200_getConfig(TDC7200_INIT_t* tdc);
+void TDC7200_Enable(void);
+
+bool TDC7200_readToggleSetting(uint8_t toggle);
+void TDC7200_setToggle(uint8_t toogle);
+uint8_t TDC7200_readMode(void);
+uint8_t TDC7200_readCalibration2Periods(void);
+uint8_t TDC7200_readAvgCycles(void);
+uint8_t TCD7200_readNumStop(void);
+bool TDC7200_readEnable(void);
+void TDC7200_setEnable(bool enable);
+void TDC7200_setClockFreqIn(uint32_t freq);
+uint8_t TDC7200_readCalibrationPeriods(void);
+double TDC7200_readToF(void);
+void TDC7200_forceMeasurementRead(void);
+
+/* Funciones para establecer el valor de los registros */
+void TDC7200_setCONFIG1(uint8_t data);
+void TDC7200_setCONFIG2(uint8_t data);
+void TDC7200_setINT_STATUS(uint8_t data);
+void TDC7200_setINT_MASK(uint8_t data);
+void TDC7200_setCOARSE_CNTR_OVF_H(uint8_t data);
+void TDC7200_setCOARSE_CNTR_OVF_L(uint8_t data);
+void TDC7200_setCLOCK_CNTR_OVF_H(uint8_t data);
+void TDC7200_setCLOCK_CNTR_OVF_L(uint8_t data);
+void TDC7200_setCLOCK_CNTR_STOP_MASK_H(uint8_t data);
+void TDC7200_setCLOCK_CNTR_STOP_MASK_L(uint8_t data);
+
 /* Funciones para obtener el valor de los registros */
 uint8_t TDC7200_getCONFIG1(void);
 uint8_t TDC7200_getCONFIG2(void);
@@ -172,18 +203,6 @@ uint32_t TDC7200_getTIME6(void);
 uint32_t TDC7200_getCALIBRATION1(void);
 uint32_t TDC7200_getCALIBRATION2(void);
 
-/* Funciones para establecer el valor de los registros */
-void TDC7200_setCONFIG1(uint8_t data);
-void TDC7200_setCONFIG2(uint8_t data);
-void TDC7200_setINT_STATUS(uint8_t data);
-void TDC7200_setINT_MASK(uint8_t data);
-void TDC7200_setCOARSE_CNTR_OVF_H(uint8_t data);
-void TDC7200_setCOARSE_CNTR_OVF_L(uint8_t data);
-void TDC7200_setCLOCK_CNTR_OVF_H(uint8_t data);
-void TDC7200_setCLOCK_CNTR_OVF_L(uint8_t data);
-void TDC7200_setCLOCK_CNTR_STOP_MASK_H(uint8_t data);
-void TDC7200_setCLOCK_CNTR_STOP_MASK_L(uint8_t data);
-
 /* Funciones generales */
 void TDC7200_WriteSingleRegister(uint8_t regAddr, uint8_t data);
 void TDC7200_WriteAutoincrementRegister(uint8_t regAddr, uint8_t *data, size_t size);
@@ -191,20 +210,6 @@ uint8_t TDC7200_ReadSingleRegister(uint8_t regAddr);
 uint32_t TDC7200_Read24bitRegister(uint8_t regAddr);
 void TDC7200_ReadAutoincrementRegister(uint8_t regAddr, uint8_t *data, size_t size);
 
-/* Funciones especiales, diseñadas para ser las unicas usadas por el usuario */
-void TDC7200_Start(TDC7200_INIT_t tdc);
-bool TDC7200_readToggleSetting(uint8_t toggle);
-void TDC7200_setToggle(uint8_t toogle);
-uint8_t TDC7200_readMode(void);
-uint8_t TDC7200_readCalibration2Periods(void);
-uint8_t TDC7200_readAvgCycles(void);
-uint8_t TCD7200_readNumStop(void);
-bool TDC7200_readEnable(void);
-void TDC7200_setEnable(bool enable);
-void TDC7200_setClockFreqIn(uint32_t freq);
-uint8_t TDC7200_readCalibrationPeriods(void);
-double TDC7200_readToF(void);
-void TDC7200_forceMeasurementRead(void);
 
 #ifdef __cplusplus
 }

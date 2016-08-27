@@ -3,6 +3,7 @@
 
 #define SLAVE_TDC1000 0x02
 #define SLAVE_DESELECT 0x03
+#define TDC1000_ENABLE 0x02
 
 /*
 Error reporting:
@@ -33,8 +34,39 @@ Esto puede hacerse simultaneamente escribiendo el valor 0x03 al registro ERROR_F
 */
 
 /* Functions */
-void TDC1000_Start(TDC1000_INIT_t tdc){
-    Ctrl_Write(0x02); // TDC1000 Enable pin set to 1
+void TDC1000_Start(TDC1000_INIT_t* tdc){
+    TDC1000_setConfig(tdc);
+    TDC1000_Enable();
+}
+
+void TDC1000_Enable(void){
+    Ctrl_Write(TDC1000_ENABLE); // TDC1000 Enable pin set to 1    
+}
+
+void TDC1000_setConfig(TDC1000_INIT_t* tdc){
+    TDC1000_setCONFIG_0(tdc->CONFIG_0);
+    TDC1000_setCONFIG_1(tdc->CONFIG_1);
+    TDC1000_setCONFIG_2(tdc->CONFIG_2);
+    TDC1000_setCONFIG_3(tdc->CONFIG_3);
+    TDC1000_setCONFIG_4(tdc->CONFIG_4);
+    TDC1000_setTOF_1(tdc->TOF_1);
+    TDC1000_setTOF_0(tdc->TOF_0);
+    TDC1000_setERROR_FLAGS(tdc->ERROR_FLAGS);
+    TDC1000_setTIMEOUT(tdc->TIMEOUT);
+    TDC1000_setCLOCK_RATE(tdc->CLOCK_RATE);
+}
+
+void TDC1000_getConfig(TDC1000_INIT_t* tdc){
+    tdc->CONFIG_0 = TDC1000_getCONFIG_0();
+    tdc->CONFIG_1 = TDC1000_getCONFIG_1();
+    tdc->CONFIG_2 = TDC1000_getCONFIG_2();
+    tdc->CONFIG_3 = TDC1000_getCONFIG_3();
+    tdc->CONFIG_4 = TDC1000_getCONFIG_4();
+    tdc->TOF_1 = TDC1000_getTOF_1();
+    tdc->TOF_0 = TDC1000_getTOF_0();
+    tdc->ERROR_FLAGS = TDC1000_getERROR_FLAGS();
+    tdc->TIMEOUT = TDC1000_getTIMEOUT();
+    tdc->CLOCK_RATE = TDC1000_getCLOCK_RATE();
 }
 
 void TDC1000_setCONFIG_0(uint8_t data){
