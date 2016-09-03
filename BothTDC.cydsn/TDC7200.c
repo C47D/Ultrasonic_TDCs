@@ -1,5 +1,6 @@
 #include <project.h>
-#include "TDC7200.h"
+#include "TDC7200_Regs.h"
+#include "TDC7200_Funcs.h"
 
 #define SLAVE_TDC7200 0x01
 #define SLAVE_DESELECT 0x03

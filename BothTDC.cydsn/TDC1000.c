@@ -1,5 +1,6 @@
 #include <project.h>
-#include "TDC1000.h"
+#include "TDC1000_Regs.h"
+#include "TDC1000_Funcs.h"
 
 #define SLAVE_TDC1000 0x02
 #define SLAVE_DESELECT 0x03
