@@ -7,27 +7,6 @@
   <width>32</width>
   <peripherals>
     <peripheral>
-      <name>Ctrl_S</name>
-      <description>No description available</description>
-      <baseAddress>0x40006576</baseAddress>
-      <addressBlock>
-        <offset>0</offset>
-        <size>0x0</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <registers>
-        <register>
-          <name>Ctrl_S_CONTROL_REG</name>
-          <description>No description available</description>
-          <addressOffset>0x0</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
       <name>PWM</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
@@ -40,7 +19,7 @@
         <register>
           <name>PWM_COMPARE_Reg_</name>
           <description>UDB.D0 - Assigned Compare Value</description>
-          <addressOffset>0x40006527</addressOffset>
+          <addressOffset>0x40006425</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -49,7 +28,7 @@
         <register>
           <name>PWM_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x40006577</addressOffset>
+          <addressOffset>0x40006475</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -81,7 +60,7 @@
         <register>
           <name>PWM_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x40006587</addressOffset>
+          <addressOffset>0x40006485</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -127,7 +106,7 @@
         <register>
           <name>PWM_STATUS_AUX_CTRL</name>
           <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x40006597</addressOffset>
+          <addressOffset>0x40006495</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -254,7 +233,7 @@
     <peripheral>
       <name>Ctrl</name>
       <description>No description available</description>
-      <baseAddress>0x40006477</baseAddress>
+      <baseAddress>0x40006474</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x0</size>

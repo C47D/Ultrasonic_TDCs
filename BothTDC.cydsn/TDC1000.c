@@ -2,9 +2,15 @@
 #include "TDC1000_Regs.h"
 #include "TDC1000_Funcs.h"
 
-#define SLAVE_TDC1000 0x02
-#define SLAVE_DESELECT 0x03
-#define TDC1000_ENABLE 0x02
+//#define EN_7200_POS     0
+#define EN_1000_POS     1
+#define RST_1000_POS    2
+#define CH_SEL_POS      3
+#define SS_1000_POS     4
+//#define SS_7200_POS     5
+
+#define SET_PIN(INDEX)      (Ctrl_Control | (1 << INDEX))
+#define CLEAR_PIN(INDEX)    (Ctrl_Control & ~(1 << INDEX))
 
 /*
 Error reporting:
@@ -41,10 +47,34 @@ void TDC1000_Start(TDC1000_INIT_t* tdc){
 }
 
 void TDC1000_Enable(void){
-    Ctrl_Write(TDC1000_ENABLE); // TDC1000 Enable pin set to 1    
+    Ctrl_Control = SET_PIN(EN_1000_POS);
 }
 
 void TDC1000_setConfig(TDC1000_INIT_t* tdc){
+    SPI_ClearRxBuffer();
+    SPI_ClearTxBuffer();
+    Ctrl_Control = CLEAR_PIN(SS_1000_POS);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_0_ADDR);
+    SPI_WriteTxData(tdc->CONFIG_0);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_1_ADDR);
+    SPI_WriteTxData(tdc->CONFIG_1);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_2_ADDR);
+    SPI_WriteTxData(tdc->CONFIG_2);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_3_ADDR);
+    SPI_WriteTxData(tdc->CONFIG_3);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_4_ADDR);
+    SPI_WriteTxData(tdc->CONFIG_4);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TOF_0_ADDR);
+    SPI_WriteTxData(tdc->TOF_0);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TOF_1_ADDR);
+    SPI_WriteTxData(tdc->TOF_1);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_ERROR_FLAGS_ADDR);
+    SPI_WriteTxData(tdc->ERROR_FLAGS);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TIMEOUT_ADDR);
+    SPI_WriteTxData(tdc->TIMEOUT);
+    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CLOCK_RATE_ADDR);
+    SPI_WriteTxData(tdc->CLOCK_RATE);
+/*    
     TDC1000_setCONFIG_0(tdc->CONFIG_0);
     TDC1000_setCONFIG_1(tdc->CONFIG_1);
     TDC1000_setCONFIG_2(tdc->CONFIG_2);
@@ -55,6 +85,9 @@ void TDC1000_setConfig(TDC1000_INIT_t* tdc){
     TDC1000_setERROR_FLAGS(tdc->ERROR_FLAGS);
     TDC1000_setTIMEOUT(tdc->TIMEOUT);
     TDC1000_setCLOCK_RATE(tdc->CLOCK_RATE);
+*/
+    while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
+    Ctrl_Control = SET_PIN(SS_1000_POS);
 }
 
 void TDC1000_getConfig(TDC1000_INIT_t* tdc){
@@ -199,14 +232,10 @@ uint8_t TDC1000_readAutozeroPeriod(void){
 }
 
 void TDC1000_setEnable(bool enable){
-    static uint8_t i;
-    i = Ctrl_Read();
-    if(enable){
-        i |= (0x02);
-        Ctrl_Write(i);
+    if(true == enable){
+        Ctrl_Control = SET_PIN(EN_1000_POS);
     }else{
-        i &= ~(0x02);
-        Ctrl_Write(i);
+        Ctrl_Control = CLEAR_PIN(EN_1000_POS);
     }
 }
 
@@ -221,9 +250,9 @@ bool TDC1000_getEnable(void){
 }
 
 void TDC1000_reset(void){
-    Ctrl_Write(Ctrl_Read() | 0x04);
-    CyDelayUs(100);
-    Ctrl_Write(Ctrl_Read() & ~(0x04));
+    Ctrl_Control = SET_PIN(RST_1000_POS);
+    CyDelayUs(50);
+    Ctrl_Control = CLEAR_PIN(RST_1000_POS);
 }
 
 bool TDC1000_readChannelSelect(void){
@@ -248,21 +277,21 @@ void TDC1000_setClockFreqIn(uint32_t freq){
 void TDC1000_WriteSingleRegister(uint8_t regAddr, uint8_t data){
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    Ctrl_S_Write(SLAVE_TDC1000);
+    Ctrl_Control = CLEAR_PIN(SS_1000_POS);
     SPI_WriteTxData(TDC1000_WRITE_CMD | regAddr);
     SPI_WriteTxData(data);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    Ctrl_S_Write(SLAVE_DESELECT);
+    Ctrl_Control = SET_PIN(SS_1000_POS);
 }
 
 uint8_t TDC1000_ReadSingleRegister(uint8_t regAddr){
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    Ctrl_S_Write(SLAVE_TDC1000);
+    Ctrl_Control = CLEAR_PIN(SS_1000_POS);
     SPI_WriteTxData(TDC1000_READ_CMD | regAddr);
     SPI_WriteTxData(TDC1000_DUMMY_BYTE);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    Ctrl_S_Write(SLAVE_DESELECT);
+    Ctrl_Control = SET_PIN(SS_1000_POS);
     (void)SPI_ReadRxData(); // Dummy read
     return SPI_ReadRxData();
 }
