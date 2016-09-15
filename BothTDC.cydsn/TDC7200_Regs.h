@@ -1,29 +1,42 @@
 /* Provided as is */
 
 /***** Register addresses *****/
-#define TDC7200_CONFIG1_ADDR            0x00u
-#define TDC7200_CONFIG2_ADDR            0x01u
-#define TDC7200_INT_STATUS_ADDR         0x02u
-#define TDC7200_INT_MASK_ADDR           0x03u
-#define TDC7200_COARSE_CNTR_OVF_H_ADDR       0x04u
-#define TDC7200_COARSE_CNTR_OVF_L_ADDR       0x05u
-#define TDC7200_CLOCK_CNTR_OVF_H_ADDR        0x06u
-#define TDC7200_CLOCK_CNTR_OVF_L_ADDR        0x07u
-#define TDC7200_CLOCK_CNTR_STOP_MASK_H_ADDR  0x08u
-#define TDC7200_CLOCK_CNTR_STOP_MASK_L_ADDR  0x09u
-#define TDC7200_TIME1_ADDR              0x10u // Solo lectura
-#define TDC7200_CLOCK_COUNT1_ADDR       0x11u // Solo lectura
-#define TDC7200_TIME2_ADDR              0x12u // Solo lectura
-#define TDC7200_CLOCK_COUNT2_ADDR       0x13u // Solo lectura
-#define TDC7200_TIME3_ADDR              0x14u // Solo lectura
-#define TDC7200_CLOCK_COUNT3_ADDR       0x15u // Solo lectura
-#define TDC7200_TIME4_ADDR              0x16u // Solo lectura
-#define TDC7200_CLOCK_COUNT4_ADDR       0x17u // Solo lectura
-#define TDC7200_TIME5_ADDR              0x18u // Solo lectura
-#define TDC7200_CLOCK_COUNT5_ADDR       0x19u // Solo lectura
-#define TDC7200_TIME6_ADDR              0x1Au // Solo lectura
-#define TDC7200_CALIBRATION1_ADDR       0x1Bu // Solo lectura
-#define TDC7200_CALIBRATION2_ADDR       0x1Cu // Solo lectura
+#define TDC7200_CONFIG1_ADDR            0x00
+#define TDC7200_CONFIG2_ADDR            0x01
+#define TDC7200_INT_STATUS_ADDR         0x02
+#define TDC7200_INT_MASK_ADDR           0x03
+#define TDC7200_COARSE_CNTR_OVF_H_ADDR       0x04
+#define TDC7200_COARSE_CNTR_OVF_L_ADDR       0x05
+#define TDC7200_CLOCK_CNTR_OVF_H_ADDR        0x06
+#define TDC7200_CLOCK_CNTR_OVF_L_ADDR        0x07
+#define TDC7200_CLOCK_CNTR_STOP_MASK_H_ADDR  0x08
+#define TDC7200_CLOCK_CNTR_STOP_MASK_L_ADDR  0x09
+#define TDC7200_TIME1_ADDR              0x10 /* Read only */
+#define TDC7200_CLOCK_COUNT1_ADDR       0x11 /* Read only */
+#define TDC7200_TIME2_ADDR              0x12 /* Read only */
+#define TDC7200_CLOCK_COUNT2_ADDR       0x13 /* Read only */
+#define TDC7200_TIME3_ADDR              0x14 /* Read only */
+#define TDC7200_CLOCK_COUNT3_ADDR       0x15 /* Read only */
+#define TDC7200_TIME4_ADDR              0x16 /* Read only */
+#define TDC7200_CLOCK_COUNT4_ADDR       0x17 /* Read only */
+#define TDC7200_TIME5_ADDR              0x18 /* Read only */
+#define TDC7200_CLOCK_COUNT5_ADDR       0x19 /* Read only */
+#define TDC7200_TIME6_ADDR              0x1A /* Read only */
+#define TDC7200_CALIBRATION1_ADDR       0x1B /* Read only */
+#define TDC7200_CALIBRATION2_ADDR       0x1C /* Read only */
+
+/***** Register Masks (so we don't write to reserved bits) *****/
+
+#define TDC7200_CONFIG1_MASK            0xFF
+#define TDC7200_CONFIG2_MASK            0xFF
+#define TDC7200_INT_STATUS_MASK         0x1F
+#define TDC7200_INT_MASK_MASK           0x07
+#define TDC7200_COARSE_CNTR_OVF_H_MASK       0xFF
+#define TDC7200_COARSE_CNTR_OVF_L_MASK       0xFF
+#define TDC7200_CLOCK_CNTR_OVF_H_MASK        0xFF
+#define TDC7200_CLOCK_CNTR_OVF_L_MASK        0xFF
+#define TDC7200_CLOCK_CNTR_STOP_MASK_H_MASK  0xFF
+#define TDC7200_CLOCK_CNTR_STOP_MASK_L_MASK  0xFF
 
 /***** CONFIG1 Register *****/
 

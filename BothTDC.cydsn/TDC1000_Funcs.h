@@ -43,8 +43,8 @@ typedef struct{
 /* Functions */
 void TDC1000_Start(TDC1000_INIT_t* tdc);
 void TDC1000_Enable(void);
-void TDC1000_setConfig(TDC1000_INIT_t* tdc);
-void TDC1000_getConfig(TDC1000_INIT_t* tdc);
+void TDC1000_setConfig(TDC1000_INIT_t* tdc, bool continuous);
+void TDC1000_getConfig(TDC1000_INIT_t* tdc, bool continuous);
 void TDC1000_Reset(void);
 uint8_t TDC1000_readModeSelect(void);
 uint8_t TDC1000_readTXFreqDiv(void);

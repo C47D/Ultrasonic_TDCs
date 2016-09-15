@@ -1,10 +1,14 @@
 #include <project.h>
 #include "cyapicallbacks.h"
+#include <stdbool.h>
+
 
 #include "TDC7200_Regs.h"
 #include "TDC7200_Funcs.h"
 #include "TDC1000_Regs.h"
 #include "TDC1000_Funcs.h"
+
+void printResults(TDC1000_INIT_t* tdc, TDC7200_INIT_t* tdc7);
 
 int main(){
 
@@ -18,44 +22,87 @@ int main(){
     isr_ERRB_Start();
 
     CyGlobalIntEnable; /* Enable global interrupts. */
-    
+
     TDC1000_INIT_t tdc1000;
     TDC7200_INIT_t tdc7200;
-    
-    tdc1000.CLOCK_RATE = 0x05;
-    tdc1000.CONFIG_0 = 0x05;
-    tdc1000.CONFIG_1 = 0x05;
-    tdc1000.CONFIG_2 = 0x05;
-    tdc1000.CONFIG_3 = 0x05;
-    tdc1000.CONFIG_4 = 0x05;
-    tdc1000.ERROR_FLAGS = 0x05;
-    tdc1000.TIMEOUT = 0x05;
-    tdc1000.TOF_1 = 0x05;
-    tdc1000.TOF_0 = 0x05;
 
-    tdc7200.CLOCK_CNTR_OVF_H = 0x05;
-    tdc7200.CLOCK_CNTR_OVF_L = 0x05;
-    tdc7200.CLOCK_CNTR_STOP_MASK_H = 0x05;
-    tdc7200.CLOCK_CNTR_STOP_MASK_L = 0x05;
-    tdc7200.COARSE_CNTR_OVF_H = 0x05;
-    tdc7200.COARSE_CNTR_OVF_L = 0x05;
-    tdc7200.CONFIG1 = 0x05;
-    tdc7200.CONFIG2 = 0x05;
-    tdc7200.INT_MASK = 0x05;
-    tdc7200.INT_STATUS = 0x05;
-    
     TDC7200_Enable();
     
     for(;;){
-        TDC1000_getConfig(NULL);
-        LED_DBG_Write(1);
-        TDC7200_getConfig(NULL);
-        LED_DBG_Write(0);
-        TDC1000_setConfig(&tdc1000);
-        LED_DBG_Write(1);
-        TDC7200_setConfig(&tdc7200);
-        LED_DBG_Write(0);
+        TDC1000_getConfig(&tdc1000, false);
+        //TDC7200_getConfig(&tdc7200);
+        printResults(&tdc1000, NULL);
+        CyDelay(500);
     }
+}
+
+void printResults(TDC1000_INIT_t* tdc, TDC7200_INIT_t* tdc7){
+    UART_PutString("\tResultados de la lectura\r\n");
+    UART_PutString("TDC1000\r\n");
+    UART_PutString("TDC1000 CONFIG_0\t");
+    UART_PutHexByte(tdc->CONFIG_0);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 CONFIG_1\t");
+    UART_PutHexByte(tdc->CONFIG_1);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 CONFIG_2\t");
+    UART_PutHexByte(tdc->CONFIG_2);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 CONFIG_3\t");
+    UART_PutHexByte(tdc->CONFIG_3);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 CONFIG_4\t");
+    UART_PutHexByte(tdc->CONFIG_4);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 TOF_1\t\t");
+    UART_PutHexByte(tdc->TOF_1);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 TOF_0\t\t");
+    UART_PutHexByte(tdc->TOF_0);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 ERROR_FLAGS\t");
+    UART_PutHexByte(tdc->ERROR_FLAGS);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 TIMEOUT\t\t");
+    UART_PutHexByte(tdc->TIMEOUT);
+    UART_PutCRLF();
+    UART_PutString("TDC1000 CLOCK_RATE\t");
+    UART_PutHexByte(tdc->CLOCK_RATE);
+    UART_PutCRLF();
+    UART_PutCRLF();
+    /*
+    UART_PutString("TDC7200\r\n");
+    UART_PutString("TDC7200 CONFIG1\t\t\t");
+    UART_PutHexByte(tdc7->CONFIG1);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 CONFIG2\t\t\t");
+    UART_PutHexByte(tdc7->CONFIG2);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 INT_STATUS\t\t");
+    UART_PutHexByte(tdc7->INT_STATUS);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 INT_MASK\t\t");
+    UART_PutHexByte(tdc7->INT_MASK);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 COARSE_CNTR_OVF_H\t");
+    UART_PutHexByte(tdc7->COARSE_CNTR_OVF_H);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 COARSE_CNTR_OVF_L\t");
+    UART_PutHexByte(tdc7->COARSE_CNTR_OVF_L);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 CLOCK_CNTR_OVF_H\t");
+    UART_PutHexByte(tdc7->CLOCK_CNTR_OVF_H);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 CLOCK_CNTR_OVF_L\t");
+    UART_PutHexByte(tdc7->CLOCK_CNTR_OVF_L);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 CLOCK_CNTR_STOP_MASK_H\t");
+    UART_PutHexByte(tdc7->CLOCK_CNTR_STOP_MASK_H);
+    UART_PutCRLF();
+    UART_PutString("TDC7200 CLOCK_CNTR_STOP_MASK_L\t");
+    UART_PutHexByte(tdc7->CLOCK_CNTR_STOP_MASK_L);
+    UART_PutCRLF();
+    */
 }
 
 void isr_INTB_Interrupt_InterruptCallback(void){

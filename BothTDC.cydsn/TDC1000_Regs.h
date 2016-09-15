@@ -13,6 +13,19 @@
 #define TDC1000_TIMEOUT_ADDR    0x08
 #define TDC1000_CLOCK_RATE_ADDR 0x09
 
+/***** Register Masks (so we don't write to reserved bits) *****/
+
+#define TDC1000_CONFIG_0_MASK   0xFF
+#define TDC1000_CONFIG_1_MASK   0x3F
+#define TDC1000_CONFIG_2_MASK   0xFF
+#define TDC1000_CONFIG_3_MASK   0x7F
+#define TDC1000_CONFIG_4_MASK   0X7F
+#define TDC1000_TOF_1_MASK      0xFF
+#define TDC1000_TOF_0_MASK      0xFF
+#define TDC1000_ERROR_FLAGS_MASK 0x07
+#define TDC1000_TIMEOUT_MASK    0x7F
+#define TDC1000_CLOCK_RATE_MASK 0x07
+
 /***** CONFIG_0 Register  *****/
 #define TDC1000_CONFIG_0_NUM_TX_MASK 0x1F
 #define TDC1000_CONFIG_0_TX_FREQ_DIV_MASK 0x07

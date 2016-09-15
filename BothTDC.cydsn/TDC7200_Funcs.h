@@ -53,8 +53,8 @@ typedef struct{
 
 /* Funciones especiales, diseñadas para ser las unicas usadas por el usuario */
 void TDC7200_Start(TDC7200_INIT_t* tdc);
-void TDC7200_setConfig(TDC7200_INIT_t* tdc);
-void TDC7200_getConfig(TDC7200_INIT_t* tdc);
+void TDC7200_setConfig(TDC7200_INIT_t* tdc, bool continuous);
+void TDC7200_getConfig(TDC7200_INIT_t* tdc, bool continuous);
 void TDC7200_Enable(void);
 
 bool TDC7200_readToggleSetting(uint8_t toggle);

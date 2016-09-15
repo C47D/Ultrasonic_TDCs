@@ -1,20 +1,20 @@
 #include <project.h>
+#include <stdbool.h>
+
 #include "TDC1000_Regs.h"
 #include "TDC1000_Funcs.h"
 
-//#define EN_7200_POS     0
 #define EN_1000_POS     1
 #define RST_1000_POS    2
 #define CH_SEL_POS      3
 #define SS_1000_POS     4
-//#define SS_7200_POS     5
 
-#define SET_PIN(INDEX)      (Ctrl_Control | (1 << INDEX))
-#define CLEAR_PIN(INDEX)    (Ctrl_Control & ~(1 << INDEX))
+#define SET_PIN(INDEX)      (Ctrl_Control = Ctrl_Control | (1 << INDEX))
+#define CLEAR_PIN(INDEX)    (Ctrl_Control = Ctrl_Control & ~(1 << INDEX))
 
 /*
 Error reporting:
-El TDC1000 reportara un error cuando las señales recividas no
+El TDC1000 reportara un error cuando las señales recibidas no
 sean las que esperaba dada su configuracion.
 El pin ERRB se pondrá en estado bajo para indicar la presencia
 de una condicion de error.
@@ -42,105 +42,152 @@ Esto puede hacerse simultaneamente escribiendo el valor 0x03 al registro ERROR_F
 
 /* Functions */
 void TDC1000_Start(TDC1000_INIT_t* tdc){
-    TDC1000_setConfig(tdc);
+    TDC1000_setConfig(tdc, true);
     TDC1000_Enable();
 }
 
 void TDC1000_Enable(void){
-    Ctrl_Control = SET_PIN(EN_1000_POS);
+    SET_PIN(EN_1000_POS);
 }
 
-void TDC1000_setConfig(TDC1000_INIT_t* tdc){
-    SPI_ClearRxBuffer();
-    SPI_ClearTxBuffer();
-    Ctrl_Control = CLEAR_PIN(SS_1000_POS);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_0_ADDR);
-    SPI_WriteTxData(tdc->CONFIG_0);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_1_ADDR);
-    SPI_WriteTxData(tdc->CONFIG_1);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_2_ADDR);
-    SPI_WriteTxData(tdc->CONFIG_2);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_3_ADDR);
-    SPI_WriteTxData(tdc->CONFIG_3);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_4_ADDR);
-    SPI_WriteTxData(tdc->CONFIG_4);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TOF_0_ADDR);
-    SPI_WriteTxData(tdc->TOF_0);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TOF_1_ADDR);
-    SPI_WriteTxData(tdc->TOF_1);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_ERROR_FLAGS_ADDR);
-    SPI_WriteTxData(tdc->ERROR_FLAGS);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TIMEOUT_ADDR);
-    SPI_WriteTxData(tdc->TIMEOUT);
-    SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CLOCK_RATE_ADDR);
-    SPI_WriteTxData(tdc->CLOCK_RATE);
-/*    
-    TDC1000_setCONFIG_0(tdc->CONFIG_0);
-    TDC1000_setCONFIG_1(tdc->CONFIG_1);
-    TDC1000_setCONFIG_2(tdc->CONFIG_2);
-    TDC1000_setCONFIG_3(tdc->CONFIG_3);
-    TDC1000_setCONFIG_4(tdc->CONFIG_4);
-    TDC1000_setTOF_1(tdc->TOF_1);
-    TDC1000_setTOF_0(tdc->TOF_0);
-    TDC1000_setERROR_FLAGS(tdc->ERROR_FLAGS);
-    TDC1000_setTIMEOUT(tdc->TIMEOUT);
-    TDC1000_setCLOCK_RATE(tdc->CLOCK_RATE);
-*/
+void TDC1000_setConfig(TDC1000_INIT_t* tdc, bool continuous){
+    SPI_ClearFIFO();
+    CLEAR_PIN(SS_1000_POS);
+    if(continuous == true){
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_0_ADDR);
+        SPI_WriteTxData((tdc->CONFIG_0 & TDC1000_CONFIG_0_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_1_ADDR);
+        SPI_WriteTxData((tdc->CONFIG_1 & TDC1000_CONFIG_1_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_2_ADDR);
+        SPI_WriteTxData((tdc->CONFIG_2 & TDC1000_CONFIG_2_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_3_ADDR);
+        SPI_WriteTxData((tdc->CONFIG_3 & TDC1000_CONFIG_3_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_4_ADDR);
+        SPI_WriteTxData((tdc->CONFIG_4 & TDC1000_CONFIG_4_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TOF_0_ADDR);
+        SPI_WriteTxData((tdc->TOF_0 & TDC1000_TOF_0_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TOF_1_ADDR);
+        SPI_WriteTxData((tdc->TOF_1 & TDC1000_TOF_1_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_ERROR_FLAGS_ADDR);
+        SPI_WriteTxData((tdc->ERROR_FLAGS & TDC1000_ERROR_FLAGS_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_TIMEOUT_ADDR);
+        SPI_WriteTxData((tdc->TIMEOUT & TDC1000_TIMEOUT_MASK));
+        SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CLOCK_RATE_ADDR);
+        SPI_WriteTxData((tdc->CLOCK_RATE & TDC1000_CLOCK_RATE_MASK));
+    }else{
+        TDC1000_setCONFIG_0((tdc->CONFIG_0 & TDC1000_CONFIG_0_MASK));
+        TDC1000_setCONFIG_1((tdc->CONFIG_1 & TDC1000_CONFIG_1_MASK));
+        TDC1000_setCONFIG_2((tdc->CONFIG_2 & TDC1000_CONFIG_2_MASK));
+        TDC1000_setCONFIG_3((tdc->CONFIG_3 & TDC1000_CONFIG_3_MASK));
+        TDC1000_setCONFIG_4((tdc->CONFIG_4 & TDC1000_CONFIG_4_MASK));
+        TDC1000_setTOF_1((tdc->TOF_1 & TDC1000_TOF_1_MASK));
+        TDC1000_setTOF_0((tdc->TOF_0 & TDC1000_TOF_0_MASK));
+        TDC1000_setERROR_FLAGS((tdc->ERROR_FLAGS & TDC1000_ERROR_FLAGS_MASK));
+        TDC1000_setTIMEOUT((tdc->TIMEOUT & TDC1000_TIMEOUT_MASK));
+        TDC1000_setCLOCK_RATE((tdc->CLOCK_RATE & TDC1000_CLOCK_RATE_MASK));
+    }
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    Ctrl_Control = SET_PIN(SS_1000_POS);
+    SET_PIN(SS_1000_POS);
 }
 
-void TDC1000_getConfig(TDC1000_INIT_t* tdc){
-    tdc->CONFIG_0 = TDC1000_getCONFIG_0();
-    tdc->CONFIG_1 = TDC1000_getCONFIG_1();
-    tdc->CONFIG_2 = TDC1000_getCONFIG_2();
-    tdc->CONFIG_3 = TDC1000_getCONFIG_3();
-    tdc->CONFIG_4 = TDC1000_getCONFIG_4();
-    tdc->TOF_1 = TDC1000_getTOF_1();
-    tdc->TOF_0 = TDC1000_getTOF_0();
-    tdc->ERROR_FLAGS = TDC1000_getERROR_FLAGS();
-    tdc->TIMEOUT = TDC1000_getTIMEOUT();
-    tdc->CLOCK_RATE = TDC1000_getCLOCK_RATE();
+void TDC1000_getConfig(TDC1000_INIT_t* tdc, bool continuous){
+    SPI_ClearFIFO();
+    CLEAR_PIN(SS_1000_POS);
+    if(continuous == true){
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_0_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+    //  (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_0 = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_1_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_1 = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_2_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_2 = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_3_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_3 = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_4_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_4 = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_TOF_0_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->TOF_0 = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_TOF_1_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->TOF_1 = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_ERROR_FLAGS_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->ERROR_FLAGS = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_TIMEOUT_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->TIMEOUT = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CLOCK_RATE_ADDR);
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CLOCK_RATE = SPI_ReadRxData();
+    }else{
+        tdc->CONFIG_0 = TDC1000_getCONFIG_0();
+        tdc->CONFIG_1 = TDC1000_getCONFIG_1();
+        tdc->CONFIG_2 = TDC1000_getCONFIG_2();
+        tdc->CONFIG_3 = TDC1000_getCONFIG_3();
+        tdc->CONFIG_4 = TDC1000_getCONFIG_4();
+        tdc->TOF_1 = TDC1000_getTOF_1();
+        tdc->TOF_0 = TDC1000_getTOF_0();
+        tdc->ERROR_FLAGS = TDC1000_getERROR_FLAGS();
+        tdc->TIMEOUT = TDC1000_getTIMEOUT();
+        tdc->CLOCK_RATE = TDC1000_getCLOCK_RATE();
+    }
+    while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
+    SET_PIN(SS_1000_POS);
 }
 
 void TDC1000_setCONFIG_0(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_CONFIG_0_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_CONFIG_0_ADDR, (data & TDC1000_CONFIG_0_MASK));
 }
 
 void TDC1000_setCONFIG_1(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_CONFIG_1_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_CONFIG_1_ADDR, (data & TDC1000_CONFIG_1_MASK));
 }
 
 void TDC1000_setCONFIG_2(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_CONFIG_2_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_CONFIG_2_ADDR, (data & TDC1000_CONFIG_2_MASK));
 }
 
 void TDC1000_setCONFIG_3(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_CONFIG_3_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_CONFIG_3_ADDR, (data & TDC1000_CONFIG_3_MASK));
 }
 
 void TDC1000_setCONFIG_4(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_CONFIG_4_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_CONFIG_4_ADDR, (data & TDC1000_CONFIG_4_MASK));
 }
 
 void TDC1000_setTOF_1(uint8_t data){    
-    TDC1000_WriteSingleRegister(TDC1000_TOF_1_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_TOF_1_ADDR, (data & TDC1000_TOF_1_MASK));
 }
 
 void TDC1000_setTOF_0(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_TOF_0_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_TOF_0_ADDR, (data & TDC1000_TOF_0_MASK));
 }
 
 void TDC1000_setERROR_FLAGS(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_ERROR_FLAGS_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_ERROR_FLAGS_ADDR, (data & TDC1000_ERROR_FLAGS_MASK));
 }
 
 void TDC1000_setTIMEOUT(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_TIMEOUT_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_TIMEOUT_ADDR, (data & TDC1000_TIMEOUT_MASK));
 }
 
 void TDC1000_setCLOCK_RATE(uint8_t data){
-    TDC1000_WriteSingleRegister(TDC1000_CLOCK_RATE_ADDR, data);
+    TDC1000_WriteSingleRegister(TDC1000_CLOCK_RATE_ADDR, (data & TDC1000_CLOCK_RATE_MASK));
 }
 
 uint8_t TDC1000_getCONFIG_0(void){
@@ -233,9 +280,9 @@ uint8_t TDC1000_readAutozeroPeriod(void){
 
 void TDC1000_setEnable(bool enable){
     if(true == enable){
-        Ctrl_Control = SET_PIN(EN_1000_POS);
+        SET_PIN(EN_1000_POS);
     }else{
-        Ctrl_Control = CLEAR_PIN(EN_1000_POS);
+        CLEAR_PIN(EN_1000_POS);
     }
 }
 
@@ -249,10 +296,10 @@ bool TDC1000_getEnable(void){
     }
 }
 
-void TDC1000_reset(void){
-    Ctrl_Control = SET_PIN(RST_1000_POS);
+void TDC1000_Reset(void){
+    SET_PIN(RST_1000_POS);
     CyDelayUs(50);
-    Ctrl_Control = CLEAR_PIN(RST_1000_POS);
+    CLEAR_PIN(RST_1000_POS);
 }
 
 bool TDC1000_readChannelSelect(void){
@@ -277,21 +324,21 @@ void TDC1000_setClockFreqIn(uint32_t freq){
 void TDC1000_WriteSingleRegister(uint8_t regAddr, uint8_t data){
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    Ctrl_Control = CLEAR_PIN(SS_1000_POS);
+    CLEAR_PIN(SS_1000_POS);
     SPI_WriteTxData(TDC1000_WRITE_CMD | regAddr);
     SPI_WriteTxData(data);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    Ctrl_Control = SET_PIN(SS_1000_POS);
+    SET_PIN(SS_1000_POS);
 }
 
 uint8_t TDC1000_ReadSingleRegister(uint8_t regAddr){
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    Ctrl_Control = CLEAR_PIN(SS_1000_POS);
+    CLEAR_PIN(SS_1000_POS);
     SPI_WriteTxData(TDC1000_READ_CMD | regAddr);
     SPI_WriteTxData(TDC1000_DUMMY_BYTE);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    Ctrl_Control = SET_PIN(SS_1000_POS);
+    SET_PIN(SS_1000_POS);
     (void)SPI_ReadRxData(); // Dummy read
     return SPI_ReadRxData();
 }
