@@ -58,6 +58,7 @@ void TDC7200_setConfig(TDC7200_INIT_t* tdc, bool continuous){
         SPI_WriteTxData((tdc->CLOCK_CNTR_STOP_MASK_H & TDC7200_CLOCK_CNTR_STOP_MASK_H_MASK));
         SPI_WriteTxData(TDC7200_WRITE_CMD | TDC7200_CLOCK_CNTR_STOP_MASK_L_ADDR);
         SPI_WriteTxData((tdc->CLOCK_CNTR_STOP_MASK_L & TDC7200_CLOCK_CNTR_STOP_MASK_L_MASK));
+        while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
     }else{
         TDC7200_setCONFIG1((tdc->CONFIG1 & TDC7200_CONFIG1_MASK));
         TDC7200_setCONFIG2((tdc->CONFIG2 & TDC7200_CONFIG2_MASK));
@@ -70,7 +71,6 @@ void TDC7200_setConfig(TDC7200_INIT_t* tdc, bool continuous){
         TDC7200_setCLOCK_CNTR_STOP_MASK_H((tdc->CLOCK_CNTR_STOP_MASK_H & TDC7200_CLOCK_CNTR_STOP_MASK_H_MASK));
         TDC7200_setCLOCK_CNTR_STOP_MASK_L((tdc->CLOCK_CNTR_STOP_MASK_L & TDC7200_CLOCK_CNTR_STOP_MASK_L_MASK));
     }
-    while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
     SET_PIN(SS_7200_POS);
 }
 
@@ -80,44 +80,45 @@ void TDC7200_getConfig(TDC7200_INIT_t* tdc, bool continuous){
     if(continuous == true){
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_CONFIG1_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CONFIG1 = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_CONFIG2_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CONFIG2 = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_INT_STATUS_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->INT_STATUS = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_INT_MASK_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->INT_MASK = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_COARSE_CNTR_OVF_H_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->COARSE_CNTR_OVF_H = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_COARSE_CNTR_OVF_L_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->COARSE_CNTR_OVF_L = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_CLOCK_CNTR_OVF_H_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CLOCK_CNTR_OVF_H = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_CLOCK_CNTR_OVF_L_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CLOCK_CNTR_OVF_L = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_CLOCK_CNTR_STOP_MASK_H_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CLOCK_CNTR_STOP_MASK_H = SPI_ReadRxData();
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_CLOCK_CNTR_STOP_MASK_L_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
+        while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
         (void)SPI_ReadRxData(); // Dummy read
         tdc->CLOCK_CNTR_STOP_MASK_L = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CLOCK_CNTR_STOP_MASK_H = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CLOCK_CNTR_OVF_L = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CLOCK_CNTR_OVF_H = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->COARSE_CNTR_OVF_L = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->COARSE_CNTR_OVF_H = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->INT_MASK = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->INT_STATUS = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG2 = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG1 = SPI_ReadRxData();
     }else{
         tdc->CONFIG1 = TDC7200_getCONFIG1();
         tdc->CONFIG2 = TDC7200_getCONFIG2();
@@ -130,7 +131,6 @@ void TDC7200_getConfig(TDC7200_INIT_t* tdc, bool continuous){
         tdc->CLOCK_CNTR_STOP_MASK_H = TDC7200_getCLOCK_CNTR_STOP_MASK_H();
         tdc->CLOCK_CNTR_STOP_MASK_L = TDC7200_getCLOCK_CNTR_STOP_MASK_L();
     }
-    while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
     SET_PIN(SS_7200_POS);
 }
 

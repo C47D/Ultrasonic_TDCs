@@ -74,6 +74,7 @@ void TDC1000_setConfig(TDC1000_INIT_t* tdc, bool continuous){
         SPI_WriteTxData((tdc->TIMEOUT & TDC1000_TIMEOUT_MASK));
         SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CLOCK_RATE_ADDR);
         SPI_WriteTxData((tdc->CLOCK_RATE & TDC1000_CLOCK_RATE_MASK));
+        while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
     }else{
         TDC1000_setCONFIG_0((tdc->CONFIG_0 & TDC1000_CONFIG_0_MASK));
         TDC1000_setCONFIG_1((tdc->CONFIG_1 & TDC1000_CONFIG_1_MASK));
@@ -86,7 +87,6 @@ void TDC1000_setConfig(TDC1000_INIT_t* tdc, bool continuous){
         TDC1000_setTIMEOUT((tdc->TIMEOUT & TDC1000_TIMEOUT_MASK));
         TDC1000_setCLOCK_RATE((tdc->CLOCK_RATE & TDC1000_CLOCK_RATE_MASK));
     }
-    while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
     SET_PIN(SS_1000_POS);
 }
 
@@ -96,44 +96,45 @@ void TDC1000_getConfig(TDC1000_INIT_t* tdc, bool continuous){
     if(continuous == true){
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_0_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-    //  (void)SPI_ReadRxData(); // Dummy read
-        tdc->CONFIG_0 = SPI_ReadRxData();
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_1_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CONFIG_1 = SPI_ReadRxData();
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_2_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CONFIG_2 = SPI_ReadRxData();
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_3_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CONFIG_3 = SPI_ReadRxData();
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_4_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->CONFIG_4 = SPI_ReadRxData();
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_TOF_0_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->TOF_0 = SPI_ReadRxData();
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_TOF_1_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->TOF_1 = SPI_ReadRxData();
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_ERROR_FLAGS_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->ERROR_FLAGS = SPI_ReadRxData();
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_TIMEOUT_ADDR);
-        SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        tdc->TIMEOUT = SPI_ReadRxData();
+        SPI_WriteTxData(TDC1000_DUMMY_BYTE);        
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CLOCK_RATE_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
+        while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
         tdc->CLOCK_RATE = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->TIMEOUT = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->ERROR_FLAGS = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->TOF_1 = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->TOF_0 = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_4 = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_3 = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_2 = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_1 = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
+        tdc->CONFIG_0 = SPI_ReadRxData();
+        (void)SPI_ReadRxData(); // Dummy read
     }else{
         tdc->CONFIG_0 = TDC1000_getCONFIG_0();
         tdc->CONFIG_1 = TDC1000_getCONFIG_1();
@@ -146,7 +147,6 @@ void TDC1000_getConfig(TDC1000_INIT_t* tdc, bool continuous){
         tdc->TIMEOUT = TDC1000_getTIMEOUT();
         tdc->CLOCK_RATE = TDC1000_getCLOCK_RATE();
     }
-    while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
     SET_PIN(SS_1000_POS);
 }
 

@@ -2,7 +2,6 @@
 #include "cyapicallbacks.h"
 #include <stdbool.h>
 
-
 #include "TDC7200_Regs.h"
 #include "TDC7200_Funcs.h"
 #include "TDC1000_Regs.h"
@@ -30,9 +29,9 @@ int main(){
     
     for(;;){
         TDC1000_getConfig(&tdc1000, false);
-        //TDC7200_getConfig(&tdc7200);
-        printResults(&tdc1000, NULL);
-        CyDelay(500);
+        TDC7200_getConfig(&tdc7200, false);
+        //printResults(&tdc1000, NULL);
+        CyDelay(50);
     }
 }
 
@@ -70,7 +69,6 @@ void printResults(TDC1000_INIT_t* tdc, TDC7200_INIT_t* tdc7){
     UART_PutHexByte(tdc->CLOCK_RATE);
     UART_PutCRLF();
     UART_PutCRLF();
-    /*
     UART_PutString("TDC7200\r\n");
     UART_PutString("TDC7200 CONFIG1\t\t\t");
     UART_PutHexByte(tdc7->CONFIG1);
@@ -102,7 +100,6 @@ void printResults(TDC1000_INIT_t* tdc, TDC7200_INIT_t* tdc7){
     UART_PutString("TDC7200 CLOCK_CNTR_STOP_MASK_L\t");
     UART_PutHexByte(tdc7->CLOCK_CNTR_STOP_MASK_L);
     UART_PutCRLF();
-    */
 }
 
 void isr_INTB_Interrupt_InterruptCallback(void){
