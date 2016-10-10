@@ -1,13 +1,13 @@
-Loading plugins phase: Elapsed time ==> 3s.140ms
+Loading plugins phase: Elapsed time ==> 3s.970ms
 Initializing data phase: Elapsed time ==> 0s.000ms
 <CYPRESSTAG name="CyDsfit arguments...">
 cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 27s.700ms
+Elaboration phase: Elapsed time ==> 25s.170ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 2s.410ms
+HDL generation phase: Elapsed time ==> 0s.729ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -41,7 +41,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Thu Sep 15 15:47:47 2016
+Mon Oct 10 02:49:31 2016
 
 
 ======================================================================
@@ -51,7 +51,7 @@ Options  :    -yv2 -q10 BothTDC.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Thu Sep 15 15:47:49 2016
+Mon Oct 10 02:49:31 2016
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v'
@@ -95,7 +95,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Thu Sep 15 15:48:01 2016
+Mon Oct 10 02:49:34 2016
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -131,7 +131,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Thu Sep 15 15:48:23 2016
+Mon Oct 10 02:49:40 2016
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -179,8 +179,6 @@ Detecting unused logic.
 	\SPI:BSPIM:control_0\
 	\SPI:Net_294\
 	Net_2
-	Net_46
-	Net_47
 	\PWM:PWMUDB:km_run\
 	\PWM:PWMUDB:ctrl_cmpmode2_2\
 	\PWM:PWMUDB:ctrl_cmpmode2_1\
@@ -348,7 +346,7 @@ Detecting unused logic.
 	\PWM:PWMUDB:add_vi_vv_MODGEN_1_3\
 	\PWM:PWMUDB:add_vi_vv_MODGEN_1_2\
 
-Deleted 153 User equations/components.
+Deleted 151 User equations/components.
 Deleted 30 Synthesized equations/components.
 
 ------------------------------------------------------
@@ -368,14 +366,14 @@ Aliasing \SPI:BSPIM:rx_status_0\ to zero
 Aliasing \SPI:Net_289\ to zero
 Aliasing \Ctrl:clk\ to zero
 Aliasing \Ctrl:rst\ to zero
-Aliasing tmpOE__RST_1000_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__nSS_TDC1000_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__nSS_TDC7200_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__EN_1000_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__ERRB_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__CH_SEL_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__EN_7200_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__INTB_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC1000_RST_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC1000_nSS_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC7200_nSS_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC1000_EN_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC1000_ERRB_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC1000_CHSEL_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC7200_EN_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC1000_INTB_net_0 to tmpOE__MISO_net_0
 Aliasing \UART:tmpOE__tx_net_0\ to tmpOE__MISO_net_0
 Aliasing \PWM:PWMUDB:hwCapture\ to zero
 Aliasing \PWM:PWMUDB:trig_out\ to tmpOE__MISO_net_0
@@ -428,6 +426,8 @@ Aliasing \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_0\ to tmpOE__MISO_net_0
 Aliasing tmpOE__clk_Gen_net_0 to tmpOE__MISO_net_0
 Aliasing tmpOE__clk_G1_net_0 to tmpOE__MISO_net_0
 Aliasing tmpOE__LED_DBG_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC7200_TRG_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC1000_TRG_net_0 to tmpOE__MISO_net_0
 Aliasing \SPI:BSPIM:so_send_reg\\D\ to zero
 Aliasing \SPI:BSPIM:mosi_pre_reg\\D\ to zero
 Aliasing \SPI:BSPIM:dpcounter_one_reg\\D\ to \SPI:BSPIM:load_rx_data\
@@ -473,14 +473,18 @@ Removing Rhs of wire Net_44[134] = \Ctrl:control_out_4\[135]
 Removing Rhs of wire Net_44[134] = \Ctrl:control_4\[146]
 Removing Rhs of wire Net_45[136] = \Ctrl:control_out_5\[137]
 Removing Rhs of wire Net_45[136] = \Ctrl:control_5\[145]
-Removing Lhs of wire tmpOE__RST_1000_net_0[152] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__nSS_TDC1000_net_0[158] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__nSS_TDC7200_net_0[164] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__EN_1000_net_0[170] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__ERRB_net_0[176] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__CH_SEL_net_0[182] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__EN_7200_net_0[189] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__INTB_net_0[195] = tmpOE__MISO_net_0[1]
+Removing Rhs of wire Net_46[138] = \Ctrl:control_out_6\[139]
+Removing Rhs of wire Net_46[138] = \Ctrl:control_6\[144]
+Removing Rhs of wire Net_47[140] = \Ctrl:control_out_7\[141]
+Removing Rhs of wire Net_47[140] = \Ctrl:control_7\[143]
+Removing Lhs of wire tmpOE__TDC1000_RST_net_0[152] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC1000_nSS_net_0[158] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC7200_nSS_net_0[164] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC1000_EN_net_0[170] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC1000_ERRB_net_0[176] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC1000_CHSEL_net_0[182] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC7200_EN_net_0[189] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC1000_INTB_net_0[195] = tmpOE__MISO_net_0[1]
 Removing Lhs of wire \UART:tmpOE__tx_net_0\[202] = tmpOE__MISO_net_0[1]
 Removing Lhs of wire \PWM:PWMUDB:ctrl_enable\[221] = \PWM:PWMUDB:control_7\[213]
 Removing Lhs of wire \PWM:PWMUDB:hwCapture\[231] = zero[2]
@@ -555,24 +559,26 @@ Removing Rhs of wire Net_300[535] = \PWM:Net_96\[332]
 Removing Lhs of wire tmpOE__clk_Gen_net_0[543] = tmpOE__MISO_net_0[1]
 Removing Lhs of wire tmpOE__clk_G1_net_0[551] = tmpOE__MISO_net_0[1]
 Removing Lhs of wire tmpOE__LED_DBG_net_0[557] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire \SPI:BSPIM:so_send_reg\\D\[563] = zero[2]
-Removing Lhs of wire \SPI:BSPIM:mosi_pre_reg\\D\[569] = zero[2]
-Removing Lhs of wire \SPI:BSPIM:dpcounter_one_reg\\D\[571] = \SPI:BSPIM:load_rx_data\[27]
-Removing Lhs of wire \SPI:BSPIM:mosi_from_dp_reg\\D\[572] = \SPI:BSPIM:mosi_from_dp\[41]
-Removing Lhs of wire \PWM:PWMUDB:min_kill_reg\\D\[575] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire \PWM:PWMUDB:prevCapture\\D\[576] = zero[2]
-Removing Lhs of wire \PWM:PWMUDB:trig_last\\D\[577] = zero[2]
-Removing Lhs of wire \PWM:PWMUDB:ltch_kill_reg\\D\[580] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire \PWM:PWMUDB:prevCompare1\\D\[583] = \PWM:PWMUDB:cmp1\[273]
-Removing Lhs of wire \PWM:PWMUDB:cmp1_status_reg\\D\[584] = \PWM:PWMUDB:cmp1_status\[274]
-Removing Lhs of wire \PWM:PWMUDB:cmp2_status_reg\\D\[585] = zero[2]
-Removing Lhs of wire \PWM:PWMUDB:pwm_i_reg\\D\[587] = \PWM:PWMUDB:pwm_i\[325]
-Removing Lhs of wire \PWM:PWMUDB:pwm1_i_reg\\D\[588] = zero[2]
-Removing Lhs of wire \PWM:PWMUDB:pwm2_i_reg\\D\[589] = zero[2]
-Removing Lhs of wire \PWM:PWMUDB:tc_i_reg\\D\[590] = \PWM:PWMUDB:status_2\[268]
+Removing Lhs of wire tmpOE__TDC7200_TRG_net_0[563] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC1000_TRG_net_0[569] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire \SPI:BSPIM:so_send_reg\\D\[575] = zero[2]
+Removing Lhs of wire \SPI:BSPIM:mosi_pre_reg\\D\[581] = zero[2]
+Removing Lhs of wire \SPI:BSPIM:dpcounter_one_reg\\D\[583] = \SPI:BSPIM:load_rx_data\[27]
+Removing Lhs of wire \SPI:BSPIM:mosi_from_dp_reg\\D\[584] = \SPI:BSPIM:mosi_from_dp\[41]
+Removing Lhs of wire \PWM:PWMUDB:min_kill_reg\\D\[587] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire \PWM:PWMUDB:prevCapture\\D\[588] = zero[2]
+Removing Lhs of wire \PWM:PWMUDB:trig_last\\D\[589] = zero[2]
+Removing Lhs of wire \PWM:PWMUDB:ltch_kill_reg\\D\[592] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire \PWM:PWMUDB:prevCompare1\\D\[595] = \PWM:PWMUDB:cmp1\[273]
+Removing Lhs of wire \PWM:PWMUDB:cmp1_status_reg\\D\[596] = \PWM:PWMUDB:cmp1_status\[274]
+Removing Lhs of wire \PWM:PWMUDB:cmp2_status_reg\\D\[597] = zero[2]
+Removing Lhs of wire \PWM:PWMUDB:pwm_i_reg\\D\[599] = \PWM:PWMUDB:pwm_i\[325]
+Removing Lhs of wire \PWM:PWMUDB:pwm1_i_reg\\D\[600] = zero[2]
+Removing Lhs of wire \PWM:PWMUDB:pwm2_i_reg\\D\[601] = zero[2]
+Removing Lhs of wire \PWM:PWMUDB:tc_i_reg\\D\[602] = \PWM:PWMUDB:status_2\[268]
 
 ------------------------------------------------------
-Aliased 0 equations, 133 wires.
+Aliased 0 equations, 139 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -705,8 +711,8 @@ Removing Lhs of wire \PWM:PWMUDB:final_capture\[291] = zero[2]
 Removing Lhs of wire \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_24\[504] = zero[2]
 Removing Lhs of wire \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_16\[514] = zero[2]
 Removing Lhs of wire \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_8\[524] = zero[2]
-Removing Lhs of wire \PWM:PWMUDB:runmode_enable\\D\[578] = \PWM:PWMUDB:control_7\[213]
-Removing Lhs of wire \PWM:PWMUDB:final_kill_reg\\D\[586] = zero[2]
+Removing Lhs of wire \PWM:PWMUDB:runmode_enable\\D\[590] = \PWM:PWMUDB:control_7\[213]
+Removing Lhs of wire \PWM:PWMUDB:final_kill_reg\\D\[598] = zero[2]
 
 ------------------------------------------------------
 Aliased 0 equations, 6 wires.
@@ -739,14 +745,14 @@ CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\wa
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
 Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -dcpsoc3 BothTDC.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 48s.172ms
+Warp synthesis phase: Elapsed time ==> 12s.180ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V3.3.0.9604, Family: PSoC3, Started at: Thursday, 15 September 2016 15:48:31
+cyp3fit: V3.3.0.9604, Family: PSoC3, Started at: Monday, 10 October 2016 02:49:43
 Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -d CY8C5888LTI-LP097 BothTDC.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.518ms
+Design parsing phase: Elapsed time ==> 0s.450ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -921,7 +927,7 @@ Design Equations
         {
         }
 
-    Pin : Name = RST_1000(0)
+    Pin : Name = TDC1000_RST(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -954,14 +960,14 @@ Design Equations
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
-            pa_out => RST_1000(0)__PA ,
+            pa_out => TDC1000_RST(0)__PA ,
             input => Net_42 ,
-            pad => RST_1000(0)_PAD );
+            pad => TDC1000_RST(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = nSS_TDC1000(0)
+    Pin : Name = TDC1000_nSS(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -994,14 +1000,14 @@ Design Equations
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
-            pa_out => nSS_TDC1000(0)__PA ,
+            pa_out => TDC1000_nSS(0)__PA ,
             input => Net_44 ,
-            pad => nSS_TDC1000(0)_PAD );
+            pad => TDC1000_nSS(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = nSS_TDC7200(0)
+    Pin : Name = TDC7200_nSS(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -1034,14 +1040,14 @@ Design Equations
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
-            pa_out => nSS_TDC7200(0)__PA ,
+            pa_out => TDC7200_nSS(0)__PA ,
             input => Net_45 ,
-            pad => nSS_TDC7200(0)_PAD );
+            pad => TDC7200_nSS(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = EN_1000(0)
+    Pin : Name = TDC1000_EN(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -1074,14 +1080,14 @@ Design Equations
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
-            pa_out => EN_1000(0)__PA ,
+            pa_out => TDC1000_EN(0)__PA ,
             input => Net_41 ,
-            pad => EN_1000(0)_PAD );
+            pad => TDC1000_EN(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = ERRB(0)
+    Pin : Name = TDC1000_ERRB(0)
         Attributes:
             In Group/Port: True
             In Sync Option: NOSYNC
@@ -1114,13 +1120,13 @@ Design Equations
             Initial Value: 1
             IO Voltage: 0
         PORT MAP (
-            pa_out => ERRB(0)__PA ,
-            pad => ERRB(0)_PAD );
+            pa_out => TDC1000_ERRB(0)__PA ,
+            pad => TDC1000_ERRB(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = CH_SEL(0)
+    Pin : Name = TDC1000_CHSEL(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -1153,14 +1159,14 @@ Design Equations
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
-            pa_out => CH_SEL(0)__PA ,
+            pa_out => TDC1000_CHSEL(0)__PA ,
             input => Net_43 ,
-            pad => CH_SEL(0)_PAD );
+            pad => TDC1000_CHSEL(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = EN_7200(0)
+    Pin : Name = TDC7200_EN(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -1193,14 +1199,14 @@ Design Equations
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
-            pa_out => EN_7200(0)__PA ,
+            pa_out => TDC7200_EN(0)__PA ,
             input => Net_40 ,
-            pad => EN_7200(0)_PAD );
+            pad => TDC7200_EN(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = INTB(0)
+    Pin : Name = TDC1000_INTB(0)
         Attributes:
             In Group/Port: True
             In Sync Option: NOSYNC
@@ -1233,8 +1239,8 @@ Design Equations
             Initial Value: 1
             IO Voltage: 0
         PORT MAP (
-            pa_out => INTB(0)__PA ,
-            pad => INTB(0)_PAD );
+            pa_out => TDC1000_INTB(0)__PA ,
+            pad => TDC1000_INTB(0)_PAD );
         Properties:
         {
         }
@@ -1393,6 +1399,86 @@ Design Equations
         PORT MAP (
             pa_out => LED_DBG(0)__PA ,
             pad => LED_DBG(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = TDC7200_TRG(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL, ROUTABLE
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => TDC7200_TRG(0)__PA ,
+            input => Net_47 ,
+            pad => TDC7200_TRG(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = TDC1000_TRG(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL, ROUTABLE
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => TDC1000_TRG(0)__PA ,
+            input => Net_46 ,
+            pad => TDC1000_TRG(0)_PAD );
         Properties:
         {
         }
@@ -1830,8 +1916,8 @@ Design Equations
 
     controlcell: Name =\Ctrl:Sync:ctrl_reg\
         PORT MAP (
-            control_7 => \Ctrl:control_7\ ,
-            control_6 => \Ctrl:control_6\ ,
+            control_7 => Net_47 ,
+            control_6 => Net_46 ,
             control_5 => Net_45 ,
             control_4 => Net_44 ,
             control_3 => Net_43 ,
@@ -1937,7 +2023,7 @@ Analog Clocks                 :    0 :    4 :    4 :  0.00 %
 CapSense Buffers              :    0 :    2 :    2 :  0.00 %
 Digital Filter Block          :    0 :    1 :    1 :  0.00 %
 Interrupts                    :    2 :   30 :   32 :  6.25 %
-IO                            :   18 :   30 :   48 : 37.50 %
+IO                            :   20 :   28 :   48 : 41.67 %
 Segment LCD                   :    0 :    1 :    1 :  0.00 %
 CAN 2.0b                      :    0 :    1 :    1 :  0.00 %
 I2C                           :    0 :    1 :    1 :  0.00 %
@@ -1964,30 +2050,32 @@ Analog (SC/CT) Blocks         :    0 :    4 :    4 :  0.00 %
 DAC                           :      :      :      :        
   VIDAC                       :    0 :    4 :    4 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 1s.764ms
-Tech mapping phase: Elapsed time ==> 3s.279ms
+Technology Mapping: Elapsed time ==> 0s.859ms
+Tech mapping phase: Elapsed time ==> 2s.280ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 Initial Analog Placement Results:
-IO_5@[IOP=(2)][IoId=(5)] : CH_SEL(0) (fixed)
-IO_5@[IOP=(12)][IoId=(5)] : EN_1000(0) (fixed)
-IO_6@[IOP=(12)][IoId=(6)] : EN_7200(0) (fixed)
-IO_6@[IOP=(1)][IoId=(6)] : ERRB(0) (fixed)
-IO_4@[IOP=(15)][IoId=(4)] : INTB(0) (fixed)
 IO_1@[IOP=(2)][IoId=(1)] : LED_DBG(0) (fixed)
 IO_0@[IOP=(12)][IoId=(0)] : MISO(0) (fixed)
 IO_1@[IOP=(12)][IoId=(1)] : MOSI(0) (fixed)
-IO_6@[IOP=(2)][IoId=(6)] : RST_1000(0) (fixed)
 IO_4@[IOP=(12)][IoId=(4)] : SCLK(0) (fixed)
+IO_5@[IOP=(2)][IoId=(5)] : TDC1000_CHSEL(0) (fixed)
+IO_5@[IOP=(12)][IoId=(5)] : TDC1000_EN(0) (fixed)
+IO_5@[IOP=(1)][IoId=(5)] : TDC1000_ERRB(0) (fixed)
+IO_0@[IOP=(2)][IoId=(0)] : TDC1000_INTB(0) (fixed)
+IO_6@[IOP=(2)][IoId=(6)] : TDC1000_RST(0) (fixed)
+IO_2@[IOP=(1)][IoId=(2)] : TDC1000_TRG(0) (fixed)
+IO_2@[IOP=(12)][IoId=(2)] : TDC1000_nSS(0) (fixed)
+IO_6@[IOP=(12)][IoId=(6)] : TDC7200_EN(0) (fixed)
+IO_4@[IOP=(1)][IoId=(4)] : TDC7200_TRG(0) (fixed)
+IO_3@[IOP=(12)][IoId=(3)] : TDC7200_nSS(0) (fixed)
 IO_7@[IOP=(12)][IoId=(7)] : \UART:tx(0)\ (fixed)
 IO_3@[IOP=(2)][IoId=(3)] : clk_G1(0) (fixed)
 IO_4@[IOP=(2)][IoId=(4)] : clk_Gen(0) (fixed)
-IO_2@[IOP=(12)][IoId=(2)] : nSS_TDC1000(0) (fixed)
-IO_3@[IOP=(12)][IoId=(3)] : nSS_TDC7200(0) (fixed)
-Analog Placement phase: Elapsed time ==> 0s.456ms
+Analog Placement phase: Elapsed time ==> 0s.430ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
-Analog Routing phase: Elapsed time ==> 0s.001ms
+Analog Routing phase: Elapsed time ==> 0s.019ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -2002,11 +2090,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 13s.936ms
+Analog Code Generation phase: Elapsed time ==> 5s.100ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 17.5 sec.
+I2076: Total run-time: 9.0 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -2017,33 +2105,33 @@ PLD Packing Summary
 ------------------------------------------------------------
             Resource Type : Used : Free :  Max :  % Used
     ====================================================
-                     PLDs :   12 :   36 :   48 :  25.00%
+                     PLDs :   11 :   37 :   48 :  22.92%
 
 <CYPRESSTAG name="PLD Statistics">
 
         PLD Resource Type :     Average/LAB
     =======================================
-                   Inputs :            7.08
-                   Pterms :            3.58
-               Macrocells :            1.50
+                   Inputs :            7.45
+                   Pterms :            3.91
+               Macrocells :            1.64
 </CYPRESSTAG>
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.047ms
+PLD Packing: Elapsed time ==> 0s.059ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.550ms
+Partitioning: Elapsed time ==> 0s.290ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Simulated Annealing">
-Annealing: Elapsed time ==> 0s.005ms
+Annealing: Elapsed time ==> 0s.030ms
 <CYPRESSTAG name="Simulated Annealing Results">
 The seed used for moves was 114161200.
-Inital cost was 313, final cost is 313 (0.00% improvement).</CYPRESSTAG>
+Inital cost was 364, final cost is 364 (0.00% improvement).</CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -2053,7 +2141,7 @@ Final Placement Summary
 
        Resource Type :      Count : Avg Inputs : Avg Outputs
     ========================================================
-                 UDB :          6 :      10.17 :       3.00
+                 UDB :          6 :       9.33 :       3.00
 <CYPRESSTAG name="Final Placement Details">
 <CYPRESSTAG name="Component Details">
 
@@ -2074,18 +2162,29 @@ UDB [UDB=(1,4)] is empty.
 UDB [UDB=(1,5)] is empty.
 UDB [UDB=(2,0)] is empty.
 UDB [UDB=(2,1)] contents:
-LAB@[UDB=(2,1)][LB=0] #macrocells=1, #inputs=3, #pterms=1
+LAB@[UDB=(2,1)][LB=0] #macrocells=1, #inputs=10, #pterms=4
 {
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:tx_status_0\, Mode=(Combinatorial) @ [UDB=(2,1)][LB=0][MC=0]
-        Total # of inputs        : 3
-        Total # of product terms : 1
+    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:state_1\, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=0]
+        Total # of inputs        : 10
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
             Clock Enable: True
-        Main Equation            : 1 pterm
+        Main Equation            : 4 pterms
         (
-              \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
               \SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              \SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
+              \SPI:BSPIM:count_0\ * !\SPI:BSPIM:tx_status_1\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_0\
+            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              !\SPI:BSPIM:count_2\ * \SPI:BSPIM:count_1\ * 
+              !\SPI:BSPIM:count_0\ * !\SPI:BSPIM:ld_ident\
         );
-        Output = \SPI:BSPIM:tx_status_0\ (fanout=1)
+        Output = \SPI:BSPIM:state_1\ (fanout=12)
         Properties               : 
         {
         }
@@ -2148,9 +2247,143 @@ count7cell: Name =\SPI:BSPIM:BitCounter\
     Clock Enable: True
 
 UDB [UDB=(2,2)] contents:
-LAB@[UDB=(2,2)][LB=0] #macrocells=2, #inputs=6, #pterms=5
+LAB@[UDB=(2,2)][LB=0] #macrocells=3, #inputs=9, #pterms=4
 {
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:cnt_enable\, Mode=(T-Register) @ [UDB=(2,2)][LB=0][MC=0]
+    [McSlotId=0]:     MacroCell: Name=Net_25, Mode=(D-Register) @ [UDB=(2,2)][LB=0][MC=0]
+        Total # of inputs        : 4
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              Net_25 * \SPI:BSPIM:state_1\ * \SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\
+        );
+        Output = Net_25 (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:load_rx_data\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=1]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              !\SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
+              \SPI:BSPIM:count_0\
+        );
+        Output = \SPI:BSPIM:load_rx_data\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=\SPI:BSPIM:tx_status_0\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=2]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\
+        );
+        Output = \SPI:BSPIM:tx_status_0\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(2,2)][LB=1] #macrocells=2, #inputs=10, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:tx_status_4\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=1][MC=0]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\
+        );
+        Output = \SPI:BSPIM:tx_status_4\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:state_2\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=1]
+        Total # of inputs        : 10
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:count_4\ * 
+              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
+              \SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
+              !\SPI:BSPIM:ld_ident\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              \SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
+              \SPI:BSPIM:count_0\ * !\SPI:BSPIM:tx_status_1\
+        );
+        Output = \SPI:BSPIM:state_2\ (fanout=12)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+statusicell: Name =\SPI:BSPIM:TxStsReg\
+    PORT MAP (
+        clock => \SPI:Net_276\ ,
+        status_4 => \SPI:BSPIM:tx_status_4\ ,
+        status_3 => \SPI:BSPIM:load_rx_data\ ,
+        status_2 => \SPI:BSPIM:tx_status_2\ ,
+        status_1 => \SPI:BSPIM:tx_status_1\ ,
+        status_0 => \SPI:BSPIM:tx_status_0\ );
+    Properties:
+    {
+        cy_force_order = 1
+        cy_int_mask = "0000000"
+        cy_md_select = "0001001"
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+controlcell: Name =\Ctrl:Sync:ctrl_reg\
+    PORT MAP (
+        control_7 => Net_47 ,
+        control_6 => Net_46 ,
+        control_5 => Net_45 ,
+        control_4 => Net_44 ,
+        control_3 => Net_43 ,
+        control_2 => Net_42 ,
+        control_1 => Net_41 ,
+        control_0 => Net_40 );
+    Properties:
+    {
+        cy_ctrl_mode_0 = "00000000"
+        cy_ctrl_mode_1 = "00000000"
+        cy_ext_reset = 0
+        cy_force_order = 1
+        cy_init_value = "00110000"
+    }
+    Clock Enable: True
+
+UDB [UDB=(2,3)] contents:
+LAB@[UDB=(2,3)][LB=0] #macrocells=2, #inputs=6, #pterms=5
+{
+    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:cnt_enable\, Mode=(T-Register) @ [UDB=(2,3)][LB=0][MC=0]
         Total # of inputs        : 4
         Total # of product terms : 4
         List of special equations: 
@@ -2172,7 +2405,7 @@ LAB@[UDB=(2,2)][LB=0] #macrocells=2, #inputs=6, #pterms=5
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\PWM:PWMUDB:status_2\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=1]
+    [McSlotId=1]:     MacroCell: Name=\PWM:PWMUDB:status_2\, Mode=(Combinatorial) @ [UDB=(2,3)][LB=0][MC=1]
         Total # of inputs        : 2
         Total # of product terms : 1
             Clock Enable: True
@@ -2189,9 +2422,9 @@ LAB@[UDB=(2,2)][LB=0] #macrocells=2, #inputs=6, #pterms=5
     [McSlotId=3]: (empty)
 }
 
-LAB@[UDB=(2,2)][LB=1] #macrocells=4, #inputs=4, #pterms=4
+LAB@[UDB=(2,3)][LB=1] #macrocells=4, #inputs=4, #pterms=4
 {
-    [McSlotId=0]:     MacroCell: Name=\PWM:PWMUDB:status_0\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\PWM:PWMUDB:status_0\, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=0]
         Total # of inputs        : 2
         Total # of product terms : 1
         List of special equations: 
@@ -2206,7 +2439,7 @@ LAB@[UDB=(2,2)][LB=1] #macrocells=4, #inputs=4, #pterms=4
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\PWM:PWMUDB:runmode_enable\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=1]
+    [McSlotId=1]:     MacroCell: Name=\PWM:PWMUDB:runmode_enable\, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=1]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -2221,7 +2454,7 @@ LAB@[UDB=(2,2)][LB=1] #macrocells=4, #inputs=4, #pterms=4
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=\PWM:PWMUDB:prevCompare1\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=2]
+    [McSlotId=2]:     MacroCell: Name=\PWM:PWMUDB:prevCompare1\, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=2]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -2236,7 +2469,7 @@ LAB@[UDB=(2,2)][LB=1] #macrocells=4, #inputs=4, #pterms=4
         {
         }
 
-    [McSlotId=3]:     MacroCell: Name=Net_300, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=3]
+    [McSlotId=3]:     MacroCell: Name=Net_300, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=3]
         Total # of inputs        : 2
         Total # of product terms : 1
         List of special equations: 
@@ -2324,195 +2557,13 @@ controlcell: Name =\PWM:PWMUDB:genblk1:ctrlreg\
     Clock Polarity: Active High
     Clock Enable: True
 
-UDB [UDB=(2,3)] contents:
-LAB@[UDB=(2,3)][LB=0] #macrocells=2, #inputs=10, #pterms=6
-{
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:load_cond\, Mode=(T-Register) @ [UDB=(2,3)][LB=0][MC=0]
-        Total # of inputs        : 9
-        Total # of product terms : 4
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 4 pterms
-        (
-              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:count_4\ * 
-              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
-              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
-              \SPI:BSPIM:load_cond\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:load_cond\
-            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:count_4\ * 
-              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
-              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
-              \SPI:BSPIM:load_cond\
-            + \SPI:BSPIM:state_0\ * !\SPI:BSPIM:count_4\ * 
-              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
-              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
-              \SPI:BSPIM:load_cond\
-        );
-        Output = \SPI:BSPIM:load_cond\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_25, Mode=(D-Register) @ [UDB=(2,3)][LB=0][MC=1]
-        Total # of inputs        : 4
-        Total # of product terms : 2
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 2 pterms
-        (
-              Net_25 * \SPI:BSPIM:state_1\ * \SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\
-        );
-        Output = Net_25 (fanout=2)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-LAB@[UDB=(2,3)][LB=1] #macrocells=1, #inputs=4, #pterms=4
-{
-    [McSlotId=0]: (empty)
-    [McSlotId=1]:     MacroCell: Name=Net_89, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=1]
-        Total # of inputs        : 4
-        Total # of product terms : 4
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 4 pterms
-        !(
-              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * !Net_89
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * !Net_89
-            + \SPI:BSPIM:state_1\ * \SPI:BSPIM:state_0\ * !Net_89
-        );
-        Output = Net_89 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-controlcell: Name =\Ctrl:Sync:ctrl_reg\
-    PORT MAP (
-        control_7 => \Ctrl:control_7\ ,
-        control_6 => \Ctrl:control_6\ ,
-        control_5 => Net_45 ,
-        control_4 => Net_44 ,
-        control_3 => Net_43 ,
-        control_2 => Net_42 ,
-        control_1 => Net_41 ,
-        control_0 => Net_40 );
-    Properties:
-    {
-        cy_ctrl_mode_0 = "00000000"
-        cy_ctrl_mode_1 = "00000000"
-        cy_ext_reset = 0
-        cy_force_order = 1
-        cy_init_value = "00110000"
-    }
-    Clock Enable: True
-
 UDB [UDB=(2,4)] is empty.
 UDB [UDB=(2,5)] is empty.
 UDB [UDB=(3,0)] is empty.
 UDB [UDB=(3,1)] contents:
-LAB@[UDB=(3,1)][LB=0] #macrocells=2, #inputs=8, #pterms=2
+LAB@[UDB=(3,1)][LB=1] #macrocells=1, #inputs=11, #pterms=7
 {
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:tx_status_4\, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=0]
-        Total # of inputs        : 3
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\
-        );
-        Output = \SPI:BSPIM:tx_status_4\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]: (empty)
-    [McSlotId=2]: (empty)
-    [McSlotId=3]:     MacroCell: Name=\SPI:BSPIM:load_rx_data\, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=3]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              !\SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
-              \SPI:BSPIM:count_0\
-        );
-        Output = \SPI:BSPIM:load_rx_data\ (fanout=2)
-        Properties               : 
-        {
-        }
-}
-
-LAB@[UDB=(3,1)][LB=1] #macrocells=1, #inputs=10, #pterms=4
-{
-    [McSlotId=0]: (empty)
-    [McSlotId=1]: (empty)
-    [McSlotId=2]: (empty)
-    [McSlotId=3]:     MacroCell: Name=\SPI:BSPIM:state_1\, Mode=(T-Register) @ [UDB=(3,1)][LB=1][MC=3]
-        Total # of inputs        : 10
-        Total # of product terms : 4
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 4 pterms
-        (
-              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              \SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
-              \SPI:BSPIM:count_0\ * !\SPI:BSPIM:tx_status_1\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_0\
-            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              !\SPI:BSPIM:count_2\ * \SPI:BSPIM:count_1\ * 
-              !\SPI:BSPIM:count_0\ * !\SPI:BSPIM:ld_ident\
-        );
-        Output = \SPI:BSPIM:state_1\ (fanout=12)
-        Properties               : 
-        {
-        }
-}
-
-statusicell: Name =\SPI:BSPIM:TxStsReg\
-    PORT MAP (
-        clock => \SPI:Net_276\ ,
-        status_4 => \SPI:BSPIM:tx_status_4\ ,
-        status_3 => \SPI:BSPIM:load_rx_data\ ,
-        status_2 => \SPI:BSPIM:tx_status_2\ ,
-        status_1 => \SPI:BSPIM:tx_status_1\ ,
-        status_0 => \SPI:BSPIM:tx_status_0\ );
-    Properties:
-    {
-        cy_force_order = 1
-        cy_int_mask = "0000000"
-        cy_md_select = "0001001"
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-
-UDB [UDB=(3,2)] contents:
-LAB@[UDB=(3,2)][LB=0] #macrocells=1, #inputs=11, #pterms=7
-{
-    [McSlotId=0]:     MacroCell: Name=Net_23, Mode=(D-Register) @ [UDB=(3,2)][LB=0][MC=0]
+    [McSlotId=0]:     MacroCell: Name=Net_23, Mode=(D-Register) @ [UDB=(3,1)][LB=1][MC=0]
         Total # of inputs        : 11
         Total # of product terms : 7
         List of special equations: 
@@ -2535,86 +2586,6 @@ LAB@[UDB=(3,2)][LB=0] #macrocells=1, #inputs=11, #pterms=7
             + !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:mosi_from_dp\
         );
         Output = Net_23 (fanout=2)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]: (empty)
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-LAB@[UDB=(3,2)][LB=1] #macrocells=1, #inputs=10, #pterms=3
-{
-    [McSlotId=0]: (empty)
-    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:state_2\, Mode=(D-Register) @ [UDB=(3,2)][LB=1][MC=1]
-        Total # of inputs        : 10
-        Total # of product terms : 3
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 3 pterms
-        (
-              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:count_4\ * 
-              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
-              \SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
-              !\SPI:BSPIM:ld_ident\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              \SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
-              \SPI:BSPIM:count_0\ * !\SPI:BSPIM:tx_status_1\
-        );
-        Output = \SPI:BSPIM:state_2\ (fanout=12)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-UDB [UDB=(3,3)] contents:
-LAB@[UDB=(3,3)][LB=0] #macrocells=1, #inputs=6, #pterms=1
-{
-    [McSlotId=0]: (empty)
-    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:rx_status_6\, Mode=(Combinatorial) @ [UDB=(3,3)][LB=0][MC=1]
-        Total # of inputs        : 6
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              !\SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
-              \SPI:BSPIM:count_0\ * \SPI:BSPIM:rx_status_4\
-        );
-        Output = \SPI:BSPIM:rx_status_6\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-LAB@[UDB=(3,3)][LB=1] #macrocells=1, #inputs=4, #pterms=3
-{
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:state_0\, Mode=(T-Register) @ [UDB=(3,3)][LB=1][MC=0]
-        Total # of inputs        : 4
-        Total # of product terms : 3
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 3 pterms
-        (
-              !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\
-            + !\SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:tx_status_1\
-        );
-        Output = \SPI:BSPIM:state_0\ (fanout=12)
         Properties               : 
         {
         }
@@ -2664,6 +2635,115 @@ datapathcell: Name =\SPI:BSPIM:sR8:Dp:u0\
     Clock Polarity: Active High
     Clock Enable: True
 
+UDB [UDB=(3,2)] contents:
+LAB@[UDB=(3,2)][LB=0] #macrocells=1, #inputs=4, #pterms=4
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]:     MacroCell: Name=Net_89, Mode=(D-Register) @ [UDB=(3,2)][LB=0][MC=3]
+        Total # of inputs        : 4
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        !(
+              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * !Net_89
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\ * !Net_89
+            + \SPI:BSPIM:state_1\ * \SPI:BSPIM:state_0\ * !Net_89
+        );
+        Output = Net_89 (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+LAB@[UDB=(3,2)][LB=1] #macrocells=1, #inputs=4, #pterms=3
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]:     MacroCell: Name=\SPI:BSPIM:state_0\, Mode=(T-Register) @ [UDB=(3,2)][LB=1][MC=3]
+        Total # of inputs        : 4
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\
+            + !\SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:tx_status_1\
+        );
+        Output = \SPI:BSPIM:state_0\ (fanout=12)
+        Properties               : 
+        {
+        }
+}
+
+UDB [UDB=(3,3)] contents:
+LAB@[UDB=(3,3)][LB=0] #macrocells=1, #inputs=9, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:load_cond\, Mode=(T-Register) @ [UDB=(3,3)][LB=0][MC=0]
+        Total # of inputs        : 9
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:count_4\ * 
+              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
+              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
+              \SPI:BSPIM:load_cond\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:load_cond\
+            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:count_4\ * 
+              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
+              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
+              \SPI:BSPIM:load_cond\
+            + \SPI:BSPIM:state_0\ * !\SPI:BSPIM:count_4\ * 
+              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
+              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
+              \SPI:BSPIM:load_cond\
+        );
+        Output = \SPI:BSPIM:load_cond\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(3,3)][LB=1] #macrocells=1, #inputs=6, #pterms=1
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]: (empty)
+    [McSlotId=2]:     MacroCell: Name=\SPI:BSPIM:rx_status_6\, Mode=(Combinatorial) @ [UDB=(3,3)][LB=1][MC=2]
+        Total # of inputs        : 6
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              !\SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
+              \SPI:BSPIM:count_0\ * \SPI:BSPIM:rx_status_4\
+        );
+        Output = \SPI:BSPIM:rx_status_6\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]: (empty)
+}
+
 statusicell: Name =\SPI:BSPIM:RxStsReg\
     PORT MAP (
         clock => \SPI:Net_276\ ,
@@ -2690,7 +2770,7 @@ Intr container @ [IntrContainer=(0)]:
         {
             int_type = "10"
         }
-  Intr@ [IntrContainer=(0)][IntrId=(12)] 
+  Intr@ [IntrContainer=(0)][IntrId=(6)] 
     interrupt: Name =isr_INTB
         PORT MAP (
             interrupt => Net_52 );
@@ -2701,7 +2781,7 @@ Intr container @ [IntrContainer=(0)]:
 Drq container @ [DrqContainer=(0)]: empty
 Port 0 is empty
 Port 1 generates interrupt for logical port:
-    logicalport: Name =ERRB
+    logicalport: Name =TDC1000_ERRB
         PORT MAP (
             in_clock_en => tmpOE__MISO_net_0 ,
             in_reset => zero ,
@@ -2767,8 +2847,90 @@ Port 1 generates interrupt for logical port:
             width = 1
         }
     and contains the following IO cells:
-[IoId=6]: 
-Pin : Name = ERRB(0)
+[IoId=2]: 
+Pin : Name = TDC1000_TRG(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL, ROUTABLE
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => TDC1000_TRG(0)__PA ,
+        input => Net_46 ,
+        pad => TDC1000_TRG(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=4]: 
+Pin : Name = TDC7200_TRG(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL, ROUTABLE
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => TDC7200_TRG(0)__PA ,
+        input => Net_47 ,
+        pad => TDC7200_TRG(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=5]: 
+Pin : Name = TDC1000_ERRB(0)
     Attributes:
         In Group/Port: True
         In Sync Option: NOSYNC
@@ -2801,13 +2963,119 @@ Pin : Name = ERRB(0)
         Initial Value: 1
         IO Voltage: 0
     PORT MAP (
-        pa_out => ERRB(0)__PA ,
-        pad => ERRB(0)_PAD );
+        pa_out => TDC1000_ERRB(0)__PA ,
+        pad => TDC1000_ERRB(0)_PAD );
     Properties:
     {
     }
 
-Port 2 contains the following IO cells:
+Port 2 generates interrupt for logical port:
+    logicalport: Name =TDC1000_INTB
+        PORT MAP (
+            in_clock_en => tmpOE__MISO_net_0 ,
+            in_reset => zero ,
+            out_clock_en => tmpOE__MISO_net_0 ,
+            out_reset => zero ,
+            interrupt => Net_52 );
+        Properties:
+        {
+            drive_mode = "010"
+            ibuf_enabled = "1"
+            id = "45525f57-b774-4806-a9fd-644fdb563a11"
+            init_dr_st = "1"
+            input_buffer_sel = "00"
+            input_clk_en = 0
+            input_sync = "0"
+            input_sync_mode = "0"
+            intr_mode = "10"
+            invert_in_clock = 0
+            invert_in_clock_en = 0
+            invert_in_reset = 0
+            invert_out_clock = 0
+            invert_out_clock_en = 0
+            invert_out_reset = 0
+            io_voltage = ""
+            layout_mode = "CONTIGUOUS"
+            oe_conn = "0"
+            oe_reset = 0
+            oe_sync = "0"
+            output_clk_en = 0
+            output_clock_mode = "0"
+            output_conn = "0"
+            output_mode = "0"
+            output_reset = 0
+            output_sync = "0"
+            ovt_hyst_trim = "0"
+            ovt_needed = "0"
+            ovt_slew_control = "00"
+            pa_in_clock = -1
+            pa_in_clock_en = -1
+            pa_in_reset = -1
+            pa_out_clock = -1
+            pa_out_clock_en = -1
+            pa_out_reset = -1
+            pin_aliases = ""
+            pin_mode = "I"
+            por_state = 4
+            port_alias_group = ""
+            port_alias_required = 0
+            sio_group_cnt = 0
+            sio_hifreq = "00000000"
+            sio_hyst = "1"
+            sio_ibuf = "00000000"
+            sio_info = "00"
+            sio_obuf = "00000000"
+            sio_refsel = "00000000"
+            sio_vohsel = "00000000"
+            sio_vtrip = "00000000"
+            slew_rate = "0"
+            spanning = 0
+            sw_only = 0
+            use_annotation = "0"
+            vtrip = "00"
+            width = 1
+        }
+    and contains the following IO cells:
+[IoId=0]: 
+Pin : Name = TDC1000_INTB(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: True
+        Interrupt mode: FALLING
+        Drive mode: RES_PULL_UP
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL, PORT_INTERRUPT
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => TDC1000_INTB(0)__PA ,
+        pad => TDC1000_INTB(0)_PAD );
+    Properties:
+    {
+    }
+
 [IoId=1]: 
 Pin : Name = LED_DBG(0)
     Attributes:
@@ -2931,7 +3199,7 @@ Pin : Name = clk_Gen(0)
     }
 
 [IoId=5]: 
-Pin : Name = CH_SEL(0)
+Pin : Name = TDC1000_CHSEL(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -2964,15 +3232,15 @@ Pin : Name = CH_SEL(0)
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
-        pa_out => CH_SEL(0)__PA ,
+        pa_out => TDC1000_CHSEL(0)__PA ,
         input => Net_43 ,
-        pad => CH_SEL(0)_PAD );
+        pad => TDC1000_CHSEL(0)_PAD );
     Properties:
     {
     }
 
 [IoId=6]: 
-Pin : Name = RST_1000(0)
+Pin : Name = TDC1000_RST(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -3005,9 +3273,9 @@ Pin : Name = RST_1000(0)
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
-        pa_out => RST_1000(0)__PA ,
+        pa_out => TDC1000_RST(0)__PA ,
         input => Net_42 ,
-        pad => RST_1000(0)_PAD );
+        pad => TDC1000_RST(0)_PAD );
     Properties:
     {
     }
@@ -3097,7 +3365,7 @@ Pin : Name = MOSI(0)
     }
 
 [IoId=2]: 
-Pin : Name = nSS_TDC1000(0)
+Pin : Name = TDC1000_nSS(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -3130,15 +3398,15 @@ Pin : Name = nSS_TDC1000(0)
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
-        pa_out => nSS_TDC1000(0)__PA ,
+        pa_out => TDC1000_nSS(0)__PA ,
         input => Net_44 ,
-        pad => nSS_TDC1000(0)_PAD );
+        pad => TDC1000_nSS(0)_PAD );
     Properties:
     {
     }
 
 [IoId=3]: 
-Pin : Name = nSS_TDC7200(0)
+Pin : Name = TDC7200_nSS(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -3171,9 +3439,9 @@ Pin : Name = nSS_TDC7200(0)
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
-        pa_out => nSS_TDC7200(0)__PA ,
+        pa_out => TDC7200_nSS(0)__PA ,
         input => Net_45 ,
-        pad => nSS_TDC7200(0)_PAD );
+        pad => TDC7200_nSS(0)_PAD );
     Properties:
     {
     }
@@ -3220,7 +3488,7 @@ Pin : Name = SCLK(0)
     }
 
 [IoId=5]: 
-Pin : Name = EN_1000(0)
+Pin : Name = TDC1000_EN(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -3253,15 +3521,15 @@ Pin : Name = EN_1000(0)
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
-        pa_out => EN_1000(0)__PA ,
+        pa_out => TDC1000_EN(0)__PA ,
         input => Net_41 ,
-        pad => EN_1000(0)_PAD );
+        pad => TDC1000_EN(0)_PAD );
     Properties:
     {
     }
 
 [IoId=6]: 
-Pin : Name = EN_7200(0)
+Pin : Name = TDC7200_EN(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -3294,9 +3562,9 @@ Pin : Name = EN_7200(0)
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
-        pa_out => EN_7200(0)__PA ,
+        pa_out => TDC7200_EN(0)__PA ,
         input => Net_40 ,
-        pad => EN_7200(0)_PAD );
+        pad => TDC7200_EN(0)_PAD );
     Properties:
     {
     }
@@ -3341,113 +3609,7 @@ Pin : Name = \UART:tx(0)\
     {
     }
 
-Port 15 generates interrupt for logical port:
-    logicalport: Name =INTB
-        PORT MAP (
-            in_clock_en => tmpOE__MISO_net_0 ,
-            in_reset => zero ,
-            out_clock_en => tmpOE__MISO_net_0 ,
-            out_reset => zero ,
-            interrupt => Net_52 );
-        Properties:
-        {
-            drive_mode = "010"
-            ibuf_enabled = "1"
-            id = "45525f57-b774-4806-a9fd-644fdb563a11"
-            init_dr_st = "1"
-            input_buffer_sel = "00"
-            input_clk_en = 0
-            input_sync = "0"
-            input_sync_mode = "0"
-            intr_mode = "10"
-            invert_in_clock = 0
-            invert_in_clock_en = 0
-            invert_in_reset = 0
-            invert_out_clock = 0
-            invert_out_clock_en = 0
-            invert_out_reset = 0
-            io_voltage = ""
-            layout_mode = "CONTIGUOUS"
-            oe_conn = "0"
-            oe_reset = 0
-            oe_sync = "0"
-            output_clk_en = 0
-            output_clock_mode = "0"
-            output_conn = "0"
-            output_mode = "0"
-            output_reset = 0
-            output_sync = "0"
-            ovt_hyst_trim = "0"
-            ovt_needed = "0"
-            ovt_slew_control = "00"
-            pa_in_clock = -1
-            pa_in_clock_en = -1
-            pa_in_reset = -1
-            pa_out_clock = -1
-            pa_out_clock_en = -1
-            pa_out_reset = -1
-            pin_aliases = ""
-            pin_mode = "I"
-            por_state = 4
-            port_alias_group = ""
-            port_alias_required = 0
-            sio_group_cnt = 0
-            sio_hifreq = "00000000"
-            sio_hyst = "1"
-            sio_ibuf = "00000000"
-            sio_info = "00"
-            sio_obuf = "00000000"
-            sio_refsel = "00000000"
-            sio_vohsel = "00000000"
-            sio_vtrip = "00000000"
-            slew_rate = "0"
-            spanning = 0
-            sw_only = 0
-            use_annotation = "0"
-            vtrip = "00"
-            width = 1
-        }
-    and contains the following IO cells:
-[IoId=4]: 
-Pin : Name = INTB(0)
-    Attributes:
-        In Group/Port: True
-        In Sync Option: NOSYNC
-        Out Sync Option: AUTO
-        Interrupt generated: True
-        Interrupt mode: FALLING
-        Drive mode: RES_PULL_UP
-        VTrip: CMOS
-        Slew: FAST
-        Input Sync needed: False
-        Output Sync needed: False
-        SC shield enabled: False
-        POR State: ANY
-        LCD Mode: COMMON
-        Register Mode: RegComb
-        CaSense Mode: NEITHER
-        Treat as pin: False
-        Is OE Registered: False
-        Uses Analog: False
-        Can contain Digital: True
-        Is SIO: False
-        SIO Output Buf: NONREGULATED
-        SIO Input Buf: SINGLE_ENDED
-        SIO HiFreq: LOW
-        SIO Hyst: DISABLED
-        SIO Vtrip: MULTIPLIER_0_5
-        SIO Multiplier Index: 0
-        SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, PORT_INTERRUPT
-        Initial Value: 1
-        IO Voltage: 0
-    PORT MAP (
-        pa_out => INTB(0)__PA ,
-        pad => INTB(0)_PAD );
-    Properties:
-    {
-    }
-
+Port 15 is empty
 CAN 2.0b group 0: empty
 Cache group 0: empty
 CapSense group 0: empty
@@ -3500,58 +3662,59 @@ SAR ADC group 0: empty
 ------------------------------------------------------------
 Port Configuration report
 ------------------------------------------------------------
-     |     |       | Interrupt |                  |                | 
-Port | Pin | Fixed |      Type |       Drive Mode |           Name | Connections
------+-----+-------+-----------+------------------+----------------+------------------
-   1 |   6 |     * |   FALLING |      RES_PULL_UP |        ERRB(0) | 
------+-----+-------+-----------+------------------+----------------+------------------
-   2 |   1 |     * |      NONE |         CMOS_OUT |     LED_DBG(0) | 
-     |   3 |     * |      NONE |         CMOS_OUT |      clk_G1(0) | In(Net_289_local)
-     |   4 |     * |      NONE |         CMOS_OUT |     clk_Gen(0) | In(Net_300)
-     |   5 |     * |      NONE |         CMOS_OUT |      CH_SEL(0) | In(Net_43)
-     |   6 |     * |      NONE |         CMOS_OUT |    RST_1000(0) | In(Net_42)
------+-----+-------+-----------+------------------+----------------+------------------
-  12 |   0 |     * |      NONE |     HI_Z_DIGITAL |        MISO(0) | FB(Net_19)
-     |   1 |     * |      NONE |         CMOS_OUT |        MOSI(0) | In(Net_23)
-     |   2 |     * |      NONE |         CMOS_OUT | nSS_TDC1000(0) | In(Net_44)
-     |   3 |     * |      NONE |         CMOS_OUT | nSS_TDC7200(0) | In(Net_45)
-     |   4 |     * |      NONE |         CMOS_OUT |        SCLK(0) | In(Net_25)
-     |   5 |     * |      NONE |         CMOS_OUT |     EN_1000(0) | In(Net_41)
-     |   6 |     * |      NONE |         CMOS_OUT |     EN_7200(0) | In(Net_40)
-     |   7 |     * |      NONE |         CMOS_OUT |   \UART:tx(0)\ | 
------+-----+-------+-----------+------------------+----------------+------------------
-  15 |   4 |     * |   FALLING |      RES_PULL_UP |        INTB(0) | 
---------------------------------------------------------------------------------------
+     |     |       | Interrupt |                  |                  | 
+Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connections
+-----+-----+-------+-----------+------------------+------------------+------------------
+   1 |   2 |     * |      NONE |         CMOS_OUT |   TDC1000_TRG(0) | In(Net_46)
+     |   4 |     * |      NONE |         CMOS_OUT |   TDC7200_TRG(0) | In(Net_47)
+     |   5 |     * |   FALLING |      RES_PULL_UP |  TDC1000_ERRB(0) | 
+-----+-----+-------+-----------+------------------+------------------+------------------
+   2 |   0 |     * |   FALLING |      RES_PULL_UP |  TDC1000_INTB(0) | 
+     |   1 |     * |      NONE |         CMOS_OUT |       LED_DBG(0) | 
+     |   3 |     * |      NONE |         CMOS_OUT |        clk_G1(0) | In(Net_289_local)
+     |   4 |     * |      NONE |         CMOS_OUT |       clk_Gen(0) | In(Net_300)
+     |   5 |     * |      NONE |         CMOS_OUT | TDC1000_CHSEL(0) | In(Net_43)
+     |   6 |     * |      NONE |         CMOS_OUT |   TDC1000_RST(0) | In(Net_42)
+-----+-----+-------+-----------+------------------+------------------+------------------
+  12 |   0 |     * |      NONE |     HI_Z_DIGITAL |          MISO(0) | FB(Net_19)
+     |   1 |     * |      NONE |         CMOS_OUT |          MOSI(0) | In(Net_23)
+     |   2 |     * |      NONE |         CMOS_OUT |   TDC1000_nSS(0) | In(Net_44)
+     |   3 |     * |      NONE |         CMOS_OUT |   TDC7200_nSS(0) | In(Net_45)
+     |   4 |     * |      NONE |         CMOS_OUT |          SCLK(0) | In(Net_25)
+     |   5 |     * |      NONE |         CMOS_OUT |    TDC1000_EN(0) | In(Net_41)
+     |   6 |     * |      NONE |         CMOS_OUT |    TDC7200_EN(0) | In(Net_40)
+     |   7 |     * |      NONE |         CMOS_OUT |     \UART:tx(0)\ | 
+----------------------------------------------------------------------------------------
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.015ms
-Digital Placement phase: Elapsed time ==> 29s.776ms
+Digital component placer commit/Report: Elapsed time ==> 0s.019ms
+Digital Placement phase: Elapsed time ==> 13s.700ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
-Digital Routing phase: Elapsed time ==> 23s.391ms
+Digital Routing phase: Elapsed time ==> 22s.200ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream and API generation">
-Bitstream and API generation phase: Elapsed time ==> 3s.008ms
+Bitstream and API generation phase: Elapsed time ==> 4s.710ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream verification">
-Bitstream verification phase: Elapsed time ==> 0s.475ms
+Bitstream verification phase: Elapsed time ==> 1s.300ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Warning: sta.M0021: BothTDC_timing.html: Warning-1350: Asynchronous path(s) exist from "clk_1(routed)" to "CyBUS_CLK". See the timing report for details. (File=C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC_timing.html)
 Timing report is in BothTDC_timing.html.
-Static timing analysis phase: Elapsed time ==> 8s.638ms
+Static timing analysis phase: Elapsed time ==> 4s.919ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 3s.100ms
+Design database save phase: Elapsed time ==> 2s.070ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 86s.803ms
+cydsfit: Elapsed time ==> 57s.370ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 87s.616ms
-API generation phase: Elapsed time ==> 13s.840ms
-Dependency generation phase: Elapsed time ==> 0s.140ms
-Cleanup phase: Elapsed time ==> 0s.000ms
+Fitter phase: Elapsed time ==> 58s.040ms
+API generation phase: Elapsed time ==> 12s.700ms
+Dependency generation phase: Elapsed time ==> 0s.370ms
+Cleanup phase: Elapsed time ==> 0s.189ms

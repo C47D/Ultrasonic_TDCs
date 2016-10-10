@@ -4,10 +4,11 @@
 #include "TDC1000_Regs.h"
 #include "TDC1000_Funcs.h"
 
-#define EN_1000_POS     1
-#define RST_1000_POS    2
-#define CH_SEL_POS      3
-#define SS_1000_POS     4
+#define TDC1000_EN_POS      1
+#define TDC1000_RST_POS     2
+#define TDC1000_CHSEL_POS   3
+#define TDC1000_nSS_POS     4
+#define TDC1000_TRG_POS     6
 
 #define SET_PIN(INDEX)      (Ctrl_Control = Ctrl_Control | (1 << INDEX))
 #define CLEAR_PIN(INDEX)    (Ctrl_Control = Ctrl_Control & ~(1 << INDEX))
@@ -47,12 +48,12 @@ void TDC1000_Start(TDC1000_INIT_t* tdc){
 }
 
 void TDC1000_Enable(void){
-    SET_PIN(EN_1000_POS);
+    SET_PIN(TDC1000_EN_POS);
 }
 
 void TDC1000_setConfig(TDC1000_INIT_t* tdc, bool continuous){
     SPI_ClearFIFO();
-    CLEAR_PIN(SS_1000_POS);
+    CLEAR_PIN(TDC1000_nSS_POS);
     if(continuous == true){
         SPI_WriteTxData(TDC1000_WRITE_CMD | TDC1000_CONFIG_0_ADDR);
         SPI_WriteTxData((tdc->CONFIG_0 & TDC1000_CONFIG_0_MASK));
@@ -87,12 +88,12 @@ void TDC1000_setConfig(TDC1000_INIT_t* tdc, bool continuous){
         TDC1000_setTIMEOUT((tdc->TIMEOUT & TDC1000_TIMEOUT_MASK));
         TDC1000_setCLOCK_RATE((tdc->CLOCK_RATE & TDC1000_CLOCK_RATE_MASK));
     }
-    SET_PIN(SS_1000_POS);
+    SET_PIN(TDC1000_nSS_POS);
 }
 
 void TDC1000_getConfig(TDC1000_INIT_t* tdc, bool continuous){
     SPI_ClearFIFO();
-    CLEAR_PIN(SS_1000_POS);
+    CLEAR_PIN(TDC1000_nSS_POS);
     if(continuous == true){
         SPI_WriteTxData(TDC1000_READ_CMD | TDC1000_CONFIG_0_ADDR);
         SPI_WriteTxData(TDC1000_DUMMY_BYTE);
@@ -147,7 +148,7 @@ void TDC1000_getConfig(TDC1000_INIT_t* tdc, bool continuous){
         tdc->TIMEOUT = TDC1000_getTIMEOUT();
         tdc->CLOCK_RATE = TDC1000_getCLOCK_RATE();
     }
-    SET_PIN(SS_1000_POS);
+    SET_PIN(TDC1000_nSS_POS);
 }
 
 void TDC1000_setCONFIG_0(uint8_t data){
@@ -324,21 +325,21 @@ void TDC1000_setClockFreqIn(uint32_t freq){
 void TDC1000_WriteSingleRegister(uint8_t regAddr, uint8_t data){
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    CLEAR_PIN(SS_1000_POS);
+    CLEAR_PIN(TDC1000_nSS_POS);
     SPI_WriteTxData(TDC1000_WRITE_CMD | regAddr);
     SPI_WriteTxData(data);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    SET_PIN(SS_1000_POS);
+    SET_PIN(TDC1000_nSS_POS);
 }
 
 uint8_t TDC1000_ReadSingleRegister(uint8_t regAddr){
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    CLEAR_PIN(SS_1000_POS);
+    CLEAR_PIN(TDC1000_nSS_POS);
     SPI_WriteTxData(TDC1000_READ_CMD | regAddr);
     SPI_WriteTxData(TDC1000_DUMMY_BYTE);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    SET_PIN(SS_1000_POS);
+    SET_PIN(TDC1000_nSS_POS);
     (void)SPI_ReadRxData(); // Dummy read
     return SPI_ReadRxData();
 }

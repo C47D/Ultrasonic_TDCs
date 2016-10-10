@@ -17,9 +17,9 @@
 
 #include "stdbool.h"
 
-#define EN_7200_POS     0
-#define CH_SEL_POS      3
-#define SS_7200_POS     5
+#define TDC7200_EN_POS      0
+#define TDC7200_nSS_POS     5
+#define TDC7200_TRG_POS     6
 
 #define SET_PIN(INDEX)      (Ctrl_Control = Ctrl_Control | (1 << INDEX))
 #define CLEAR_PIN(INDEX)    (Ctrl_Control = Ctrl_Control & ~(1 << INDEX))
@@ -31,12 +31,12 @@ void TDC7200_Start(TDC7200_INIT_t* tdc){
 
 void TDC7200_Enable(void){
     /* El pin EN del TDC7200 debe estar a 1 lógico para poder usarlo*/
-    SET_PIN(EN_7200_POS);
+    SET_PIN(TDC7200_EN_POS);
 }
 
 void TDC7200_setConfig(TDC7200_INIT_t* tdc, bool continuous){
     SPI_ClearFIFO();
-    CLEAR_PIN(SS_7200_POS);
+    CLEAR_PIN(TDC7200_nSS_POS);
     if(continuous == true){
         SPI_WriteTxData(TDC7200_WRITE_CMD | TDC7200_CONFIG1_ADDR);
         SPI_WriteTxData((tdc->CONFIG1 & TDC7200_CONFIG1_MASK));
@@ -71,12 +71,12 @@ void TDC7200_setConfig(TDC7200_INIT_t* tdc, bool continuous){
         TDC7200_setCLOCK_CNTR_STOP_MASK_H((tdc->CLOCK_CNTR_STOP_MASK_H & TDC7200_CLOCK_CNTR_STOP_MASK_H_MASK));
         TDC7200_setCLOCK_CNTR_STOP_MASK_L((tdc->CLOCK_CNTR_STOP_MASK_L & TDC7200_CLOCK_CNTR_STOP_MASK_L_MASK));
     }
-    SET_PIN(SS_7200_POS);
+    SET_PIN(TDC7200_nSS_POS);
 }
 
 void TDC7200_getConfig(TDC7200_INIT_t* tdc, bool continuous){
     SPI_ClearFIFO();
-    CLEAR_PIN(SS_7200_POS);
+    CLEAR_PIN(TDC7200_nSS_POS);
     if(continuous == true){
         SPI_WriteTxData(TDC7200_READ_CMD | TDC7200_CONFIG1_ADDR);
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
@@ -131,7 +131,7 @@ void TDC7200_getConfig(TDC7200_INIT_t* tdc, bool continuous){
         tdc->CLOCK_CNTR_STOP_MASK_H = TDC7200_getCLOCK_CNTR_STOP_MASK_H();
         tdc->CLOCK_CNTR_STOP_MASK_L = TDC7200_getCLOCK_CNTR_STOP_MASK_L();
     }
-    SET_PIN(SS_7200_POS);
+    SET_PIN(TDC7200_nSS_POS);
 }
 
 /* Funciones para obtener el valor de los registros */
@@ -286,11 +286,11 @@ void TDC7200_forceMeasurementRead(void);
 void TDC7200_WriteSingleRegister(uint8_t regAddr, uint8_t data){
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    CLEAR_PIN(SS_7200_POS);
+    CLEAR_PIN(TDC7200_nSS_POS);
     SPI_WriteTxData(TDC7200_WRITE_CMD | regAddr);
     SPI_WriteTxData(data);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    SET_PIN(SS_7200_POS);
+    SET_PIN(TDC7200_nSS_POS);
 }
 
 void TDC7200_WriteAutoincrementRegister(uint8_t regAddr, uint8_t *data, size_t size){
@@ -298,23 +298,23 @@ void TDC7200_WriteAutoincrementRegister(uint8_t regAddr, uint8_t *data, size_t s
 
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    CLEAR_PIN(SS_7200_POS);
+    CLEAR_PIN(TDC7200_nSS_POS);
     SPI_WriteTxData(TDC7200_AUTO_INCREMENT | TDC7200_WRITE_CMD | regAddr);
     for(; i < size; i++){
         SPI_WriteTxData(data[i]);
     }
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    SET_PIN(SS_7200_POS);
+    SET_PIN(TDC7200_nSS_POS);
 }
 
 uint8_t TDC7200_ReadSingleRegister(uint8_t regAddr){
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    CLEAR_PIN(SS_7200_POS);
+    CLEAR_PIN(TDC7200_nSS_POS);
     SPI_WriteTxData(TDC7200_READ_CMD | regAddr);
     SPI_WriteTxData(TDC7200_DUMMY_BYTE);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    SET_PIN(SS_7200_POS);
+    SET_PIN(TDC7200_nSS_POS);
     (void)SPI_ReadRxData(); /* Dummy read */
     return SPI_ReadRxData();
 }
@@ -324,13 +324,13 @@ uint32_t TDC7200_Read24bitRegister(uint32_t regAddr){
 
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    CLEAR_PIN(SS_7200_POS);
+    CLEAR_PIN(TDC7200_nSS_POS);
     SPI_WriteTxData(TDC7200_READ_CMD | regAddr);
     SPI_WriteTxData(TDC7200_DUMMY_BYTE);
     SPI_WriteTxData(TDC7200_DUMMY_BYTE);
     SPI_WriteTxData(TDC7200_DUMMY_BYTE);
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    SET_PIN(SS_7200_POS);
+    SET_PIN(TDC7200_nSS_POS);
     (void)SPI_ReadRxData(); /* Dummy read */
     d1 = SPI_ReadRxData();
     d2 = SPI_ReadRxData();
@@ -343,7 +343,7 @@ void TDC7200_ReadAutoincrementRegister(uint8_t regAddr, uint8_t *data, size_t si
 
     SPI_ClearRxBuffer();
     SPI_ClearTxBuffer();
-    CLEAR_PIN(SS_7200_POS);
+    CLEAR_PIN(TDC7200_nSS_POS);
     SPI_WriteTxData(TDC7200_AUTO_INCREMENT | TDC7200_READ_CMD | regAddr);
     for(; i < size; i++){
         SPI_WriteTxData(TDC7200_DUMMY_BYTE);
@@ -353,7 +353,7 @@ void TDC7200_ReadAutoincrementRegister(uint8_t regAddr, uint8_t *data, size_t si
         *(data + j) = SPI_ReadRxData();;
     }
     while(!(SPI_TX_STATUS_REG & SPI_STS_SPI_DONE));
-    SET_PIN(SS_7200_POS);
+    SET_PIN(TDC7200_nSS_POS);
 }
 
 /* [] END OF FILE */
