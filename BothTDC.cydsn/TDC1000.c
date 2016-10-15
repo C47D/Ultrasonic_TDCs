@@ -8,10 +8,14 @@
 #define TDC1000_RST_POS     2
 #define TDC1000_CHSEL_POS   3
 #define TDC1000_nSS_POS     4
-#define TDC1000_TRG_POS     6
+#define TDC1000_TRGG_POS    6
 
 #define SET_PIN(INDEX)      (Ctrl_Control = Ctrl_Control | (1 << INDEX))
 #define CLEAR_PIN(INDEX)    (Ctrl_Control = Ctrl_Control & ~(1 << INDEX))
+#define TOGGLE_PIN(INDEX)   do{SET_PIN(INDEX); \
+                                CyDelay(1); \
+                                CLEAR_PIN(INDEX); \
+                                }while(0)
 
 /*
 Error reporting:
@@ -49,6 +53,10 @@ void TDC1000_Start(TDC1000_INIT_t* tdc){
 
 void TDC1000_Enable(void){
     SET_PIN(TDC1000_EN_POS);
+}
+
+void TDC1000_Trigger(void){
+    TOGGLE_PIN(TDC1000_TRGG_POS);
 }
 
 void TDC1000_setConfig(TDC1000_INIT_t* tdc, bool continuous){
@@ -281,9 +289,9 @@ uint8_t TDC1000_readAutozeroPeriod(void){
 
 void TDC1000_setEnable(bool enable){
     if(true == enable){
-        SET_PIN(EN_1000_POS);
+        SET_PIN(TDC1000_EN_POS);
     }else{
-        CLEAR_PIN(EN_1000_POS);
+        CLEAR_PIN(TDC1000_EN_POS);
     }
 }
 
@@ -298,9 +306,9 @@ bool TDC1000_getEnable(void){
 }
 
 void TDC1000_Reset(void){
-    SET_PIN(RST_1000_POS);
+    SET_PIN(TDC1000_RST_POS);
     CyDelayUs(50);
-    CLEAR_PIN(RST_1000_POS);
+    CLEAR_PIN(TDC1000_RST_POS);
 }
 
 bool TDC1000_readChannelSelect(void){

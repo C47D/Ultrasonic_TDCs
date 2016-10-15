@@ -1,13 +1,12 @@
-Loading plugins phase: Elapsed time ==> 3s.970ms
-Initializing data phase: Elapsed time ==> 0s.000ms
+Loading plugins phase: Elapsed time ==> 17s.594ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 25s.170ms
+Elaboration phase: Elapsed time ==> 44s.772ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.729ms
+HDL generation phase: Elapsed time ==> 2s.854ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -24,13 +23,13 @@ HDL generation phase: Elapsed time ==> 0s.729ms
 
 ======================================================================
 Compiling:  BothTDC.v
-Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
 Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -dcpsoc3 BothTDC.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  BothTDC.v
-Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
 Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -dcpsoc3 BothTDC.v -verilog
 ======================================================================
 
@@ -41,7 +40,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Mon Oct 10 02:49:31 2016
+Sat Oct 15 15:14:25 2016
 
 
 ======================================================================
@@ -51,39 +50,39 @@ Options  :    -yv2 -q10 BothTDC.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Mon Oct 10 02:49:31 2016
+Sat Oct 15 15:14:25 2016
 
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'
 
 vpp:  No errors.
 
 Library 'work' => directory 'lcpsoc3'
 General_symbol_table
 General_symbol_table
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
 Using control file 'BothTDC.ctl'.
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v (line 947, col 46):  Note: Substituting module 'sub_vi_vv' for '-'.
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v (line 977, col 46):  Note: Substituting module 'add_vi_vv' for '+'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v (line 947, col 46):  Note: Substituting module 'sub_vi_vv' for '-'.
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v (line 977, col 46):  Note: Substituting module 'add_vi_vv' for '+'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
 
 vlogfe:  No errors.
 
@@ -95,31 +94,31 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Mon Oct 10 02:49:34 2016
+Sat Oct 15 15:14:35 2016
 
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
 Linking 'C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\codegentemp\BothTDC.ctl'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
 Linking 'C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\codegentemp\BothTDC.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
 
 tovif:  No errors.
 
@@ -131,32 +130,32 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Mon Oct 10 02:49:40 2016
+Sat Oct 15 15:14:48 2016
 
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
 Linking 'C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\codegentemp\BothTDC.ctl'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
 Linking 'C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\codegentemp\BothTDC.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
 
 ----------------------------------------------------------
 Detecting unused logic.
@@ -426,8 +425,8 @@ Aliasing \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_0\ to tmpOE__MISO_net_0
 Aliasing tmpOE__clk_Gen_net_0 to tmpOE__MISO_net_0
 Aliasing tmpOE__clk_G1_net_0 to tmpOE__MISO_net_0
 Aliasing tmpOE__LED_DBG_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__TDC7200_TRG_net_0 to tmpOE__MISO_net_0
-Aliasing tmpOE__TDC1000_TRG_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC7200_TRGG_net_0 to tmpOE__MISO_net_0
+Aliasing tmpOE__TDC1000_TRGG_net_0 to tmpOE__MISO_net_0
 Aliasing \SPI:BSPIM:so_send_reg\\D\ to zero
 Aliasing \SPI:BSPIM:mosi_pre_reg\\D\ to zero
 Aliasing \SPI:BSPIM:dpcounter_one_reg\\D\ to \SPI:BSPIM:load_rx_data\
@@ -559,8 +558,8 @@ Removing Rhs of wire Net_300[535] = \PWM:Net_96\[332]
 Removing Lhs of wire tmpOE__clk_Gen_net_0[543] = tmpOE__MISO_net_0[1]
 Removing Lhs of wire tmpOE__clk_G1_net_0[551] = tmpOE__MISO_net_0[1]
 Removing Lhs of wire tmpOE__LED_DBG_net_0[557] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__TDC7200_TRG_net_0[563] = tmpOE__MISO_net_0[1]
-Removing Lhs of wire tmpOE__TDC1000_TRG_net_0[569] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC7200_TRGG_net_0[563] = tmpOE__MISO_net_0[1]
+Removing Lhs of wire tmpOE__TDC1000_TRGG_net_0[569] = tmpOE__MISO_net_0[1]
 Removing Lhs of wire \SPI:BSPIM:so_send_reg\\D\[575] = zero[2]
 Removing Lhs of wire \SPI:BSPIM:mosi_pre_reg\\D\[581] = zero[2]
 Removing Lhs of wire \SPI:BSPIM:dpcounter_one_reg\\D\[583] = \SPI:BSPIM:load_rx_data\[27]
@@ -741,20 +740,20 @@ Circuit simplification results:
 
 topld:  No errors.
 
-CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp
-Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
 Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -dcpsoc3 BothTDC.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 12s.180ms
+Warp synthesis phase: Elapsed time ==> 32s.511ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V3.3.0.9604, Family: PSoC3, Started at: Monday, 10 October 2016 02:49:43
+cyp3fit: V4.0.0.432, Family: PSoC3, Started at: Saturday, 15 October 2016 15:14:54
 Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC.cyprj -d CY8C5888LTI-LP097 BothTDC.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.450ms
+Design parsing phase: Elapsed time ==> 1s.522ms
 </CYPRESSTAG>
-<CYPRESSTAG name="Tech mapping">
+<CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
     Removed wire end \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_24\ kept zero
     Removed wire end \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_16\ kept zero
@@ -1403,7 +1402,7 @@ Design Equations
         {
         }
 
-    Pin : Name = TDC7200_TRG(0)
+    Pin : Name = TDC7200_TRGG(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -1436,14 +1435,14 @@ Design Equations
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
-            pa_out => TDC7200_TRG(0)__PA ,
+            pa_out => TDC7200_TRGG(0)__PA ,
             input => Net_47 ,
-            pad => TDC7200_TRG(0)_PAD );
+            pad => TDC7200_TRGG(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = TDC1000_TRG(0)
+    Pin : Name = TDC1000_TRGG(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -1476,9 +1475,9 @@ Design Equations
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
-            pa_out => TDC1000_TRG(0)__PA ,
+            pa_out => TDC1000_TRGG(0)__PA ,
             input => Net_46 ,
-            pad => TDC1000_TRG(0)_PAD );
+            pad => TDC1000_TRGG(0)_PAD );
         Properties:
         {
         }
@@ -1999,6 +1998,7 @@ Design Equations
         Properties:
         {
             int_type = "10"
+            is_nmi = 0
         }
 
     interrupt: Name =isr_INTB
@@ -2007,6 +2007,7 @@ Design Equations
         Properties:
         {
             int_type = "10"
+            is_nmi = 0
         }
     </CYPRESSTAG>
 </CYPRESSTAG>
@@ -2050,8 +2051,8 @@ Analog (SC/CT) Blocks         :    0 :    4 :    4 :  0.00 %
 DAC                           :      :      :      :        
   VIDAC                       :    0 :    4 :    4 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.859ms
-Tech mapping phase: Elapsed time ==> 2s.280ms
+Technology Mapping: Elapsed time ==> 11s.225ms
+Tech Mapping phase: Elapsed time ==> 14s.768ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 Initial Analog Placement Results:
@@ -2064,18 +2065,18 @@ IO_5@[IOP=(12)][IoId=(5)] : TDC1000_EN(0) (fixed)
 IO_5@[IOP=(1)][IoId=(5)] : TDC1000_ERRB(0) (fixed)
 IO_0@[IOP=(2)][IoId=(0)] : TDC1000_INTB(0) (fixed)
 IO_6@[IOP=(2)][IoId=(6)] : TDC1000_RST(0) (fixed)
-IO_2@[IOP=(1)][IoId=(2)] : TDC1000_TRG(0) (fixed)
+IO_2@[IOP=(1)][IoId=(2)] : TDC1000_TRGG(0) (fixed)
 IO_2@[IOP=(12)][IoId=(2)] : TDC1000_nSS(0) (fixed)
 IO_6@[IOP=(12)][IoId=(6)] : TDC7200_EN(0) (fixed)
-IO_4@[IOP=(1)][IoId=(4)] : TDC7200_TRG(0) (fixed)
+IO_4@[IOP=(1)][IoId=(4)] : TDC7200_TRGG(0) (fixed)
 IO_3@[IOP=(12)][IoId=(3)] : TDC7200_nSS(0) (fixed)
 IO_7@[IOP=(12)][IoId=(7)] : \UART:tx(0)\ (fixed)
 IO_3@[IOP=(2)][IoId=(3)] : clk_G1(0) (fixed)
 IO_4@[IOP=(2)][IoId=(4)] : clk_Gen(0) (fixed)
-Analog Placement phase: Elapsed time ==> 0s.430ms
+Analog Placement phase: Elapsed time ==> 2s.759ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
-Analog Routing phase: Elapsed time ==> 0s.019ms
+Analog Routing phase: Elapsed time ==> 0s.103ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -2090,11 +2091,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 5s.100ms
+Analog Code Generation phase: Elapsed time ==> 7s.499ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 9.0 sec.
+I2076: Total run-time: 28.7 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -2105,33 +2106,27 @@ PLD Packing Summary
 ------------------------------------------------------------
             Resource Type : Used : Free :  Max :  % Used
     ====================================================
-                     PLDs :   11 :   37 :   48 :  22.92%
+                     PLDs :   12 :   36 :   48 :  25.00%
 
 <CYPRESSTAG name="PLD Statistics">
 
         PLD Resource Type :     Average/LAB
     =======================================
-                   Inputs :            7.45
-                   Pterms :            3.91
-               Macrocells :            1.64
+                   Inputs :            7.08
+                   Pterms :            3.58
+               Macrocells :            1.50
 </CYPRESSTAG>
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.059ms
+PLD Packing: Elapsed time ==> 0s.489ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.290ms
-</CYPRESSTAG>
-<CYPRESSTAG name="Simulated Annealing">
-Annealing: Elapsed time ==> 0s.030ms
-<CYPRESSTAG name="Simulated Annealing Results">
-The seed used for moves was 114161200.
-Inital cost was 364, final cost is 364 (0.00% improvement).</CYPRESSTAG>
+Partitioning: Elapsed time ==> 1s.682ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -2141,7 +2136,7 @@ Final Placement Summary
 
        Resource Type :      Count : Avg Inputs : Avg Outputs
     ========================================================
-                 UDB :          6 :       9.33 :       3.00
+                 UDB :          6 :      10.00 :       3.00
 <CYPRESSTAG name="Final Placement Details">
 <CYPRESSTAG name="Component Details">
 
@@ -2162,10 +2157,11 @@ UDB [UDB=(1,4)] is empty.
 UDB [UDB=(1,5)] is empty.
 UDB [UDB=(2,0)] is empty.
 UDB [UDB=(2,1)] contents:
-LAB@[UDB=(2,1)][LB=0] #macrocells=1, #inputs=10, #pterms=4
+LAB@[UDB=(2,1)][LB=0] #macrocells=1, #inputs=4, #pterms=4
 {
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:state_1\, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=0]
-        Total # of inputs        : 10
+    [McSlotId=0]: (empty)
+    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:cnt_enable\, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=1]
+        Total # of inputs        : 4
         Total # of product terms : 4
         List of special equations: 
             Clock  = (\SPI:Net_276\) => Global
@@ -2173,48 +2169,37 @@ LAB@[UDB=(2,1)][LB=0] #macrocells=1, #inputs=10, #pterms=4
         Main Equation            : 4 pterms
         (
               !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              \SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
-              \SPI:BSPIM:count_0\ * !\SPI:BSPIM:tx_status_1\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_0\
-            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              !\SPI:BSPIM:count_2\ * \SPI:BSPIM:count_1\ * 
-              !\SPI:BSPIM:count_0\ * !\SPI:BSPIM:ld_ident\
+              !\SPI:BSPIM:state_0\ * \SPI:BSPIM:cnt_enable\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\ * !\SPI:BSPIM:cnt_enable\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\ * \SPI:BSPIM:cnt_enable\
+            + \SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\ * \SPI:BSPIM:cnt_enable\
         );
-        Output = \SPI:BSPIM:state_1\ (fanout=12)
+        Output = \SPI:BSPIM:cnt_enable\ (fanout=3)
         Properties               : 
         {
         }
 
-    [McSlotId=1]: (empty)
     [McSlotId=2]: (empty)
     [McSlotId=3]: (empty)
 }
 
-LAB@[UDB=(2,1)][LB=1] #macrocells=1, #inputs=9, #pterms=3
+LAB@[UDB=(2,1)][LB=1] #macrocells=1, #inputs=5, #pterms=1
 {
     [McSlotId=0]: (empty)
-    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:ld_ident\, Mode=(T-Register) @ [UDB=(2,1)][LB=1][MC=1]
-        Total # of inputs        : 9
-        Total # of product terms : 3
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
+    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:load_rx_data\, Mode=(Combinatorial) @ [UDB=(2,1)][LB=1][MC=1]
+        Total # of inputs        : 5
+        Total # of product terms : 1
             Clock Enable: True
-        Main Equation            : 3 pterms
+        Main Equation            : 1 pterm
         (
-              \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:ld_ident\
-            + \SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * \SPI:BSPIM:ld_ident\
-            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
               !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              !\SPI:BSPIM:count_2\ * \SPI:BSPIM:count_1\ * 
-              !\SPI:BSPIM:count_0\ * \SPI:BSPIM:ld_ident\
+              !\SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
+              \SPI:BSPIM:count_0\
         );
-        Output = \SPI:BSPIM:ld_ident\ (fanout=4)
+        Output = \SPI:BSPIM:load_rx_data\ (fanout=2)
         Properties               : 
         {
         }
@@ -2247,60 +2232,40 @@ count7cell: Name =\SPI:BSPIM:BitCounter\
     Clock Enable: True
 
 UDB [UDB=(2,2)] contents:
-LAB@[UDB=(2,2)][LB=0] #macrocells=3, #inputs=9, #pterms=4
+LAB@[UDB=(2,2)][LB=0] #macrocells=3, #inputs=6, #pterms=5
 {
-    [McSlotId=0]:     MacroCell: Name=Net_25, Mode=(D-Register) @ [UDB=(2,2)][LB=0][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:state_0\, Mode=(T-Register) @ [UDB=(2,2)][LB=0][MC=0]
         Total # of inputs        : 4
-        Total # of product terms : 2
+        Total # of product terms : 3
         List of special equations: 
             Clock  = (\SPI:Net_276\) => Global
             Clock Enable: True
-        Main Equation            : 2 pterms
+        Main Equation            : 3 pterms
         (
-              Net_25 * \SPI:BSPIM:state_1\ * \SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\
+              !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\
+            + !\SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:tx_status_1\
         );
-        Output = Net_25 (fanout=2)
+        Output = \SPI:BSPIM:state_0\ (fanout=12)
         Properties               : 
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:load_rx_data\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=1]
-        Total # of inputs        : 5
+    [McSlotId=1]:     MacroCell: Name=\PWM:PWMUDB:status_2\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=1]
+        Total # of inputs        : 2
         Total # of product terms : 1
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              !\SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
-              \SPI:BSPIM:count_0\
+              \PWM:PWMUDB:runmode_enable\ * \PWM:PWMUDB:tc_i\
         );
-        Output = \SPI:BSPIM:load_rx_data\ (fanout=2)
+        Output = \PWM:PWMUDB:status_2\ (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=\SPI:BSPIM:tx_status_0\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=2]
-        Total # of inputs        : 3
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\
-        );
-        Output = \SPI:BSPIM:tx_status_0\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]: (empty)
-}
-
-LAB@[UDB=(2,2)][LB=1] #macrocells=2, #inputs=10, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:tx_status_4\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=1][MC=0]
+    [McSlotId=2]:     MacroCell: Name=\SPI:BSPIM:tx_status_4\, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=2]
         Total # of inputs        : 3
         Total # of product terms : 1
             Clock Enable: True
@@ -2314,117 +2279,12 @@ LAB@[UDB=(2,2)][LB=1] #macrocells=2, #inputs=10, #pterms=4
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:state_2\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=1]
-        Total # of inputs        : 10
-        Total # of product terms : 3
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 3 pterms
-        (
-              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:count_4\ * 
-              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
-              \SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
-              !\SPI:BSPIM:ld_ident\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              \SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
-              \SPI:BSPIM:count_0\ * !\SPI:BSPIM:tx_status_1\
-        );
-        Output = \SPI:BSPIM:state_2\ (fanout=12)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
     [McSlotId=3]: (empty)
 }
 
-statusicell: Name =\SPI:BSPIM:TxStsReg\
-    PORT MAP (
-        clock => \SPI:Net_276\ ,
-        status_4 => \SPI:BSPIM:tx_status_4\ ,
-        status_3 => \SPI:BSPIM:load_rx_data\ ,
-        status_2 => \SPI:BSPIM:tx_status_2\ ,
-        status_1 => \SPI:BSPIM:tx_status_1\ ,
-        status_0 => \SPI:BSPIM:tx_status_0\ );
-    Properties:
-    {
-        cy_force_order = 1
-        cy_int_mask = "0000000"
-        cy_md_select = "0001001"
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-
-controlcell: Name =\Ctrl:Sync:ctrl_reg\
-    PORT MAP (
-        control_7 => Net_47 ,
-        control_6 => Net_46 ,
-        control_5 => Net_45 ,
-        control_4 => Net_44 ,
-        control_3 => Net_43 ,
-        control_2 => Net_42 ,
-        control_1 => Net_41 ,
-        control_0 => Net_40 );
-    Properties:
-    {
-        cy_ctrl_mode_0 = "00000000"
-        cy_ctrl_mode_1 = "00000000"
-        cy_ext_reset = 0
-        cy_force_order = 1
-        cy_init_value = "00110000"
-    }
-    Clock Enable: True
-
-UDB [UDB=(2,3)] contents:
-LAB@[UDB=(2,3)][LB=0] #macrocells=2, #inputs=6, #pterms=5
+LAB@[UDB=(2,2)][LB=1] #macrocells=4, #inputs=4, #pterms=4
 {
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:cnt_enable\, Mode=(T-Register) @ [UDB=(2,3)][LB=0][MC=0]
-        Total # of inputs        : 4
-        Total # of product terms : 4
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 4 pterms
-        (
-              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * \SPI:BSPIM:cnt_enable\
-            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\ * !\SPI:BSPIM:cnt_enable\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              \SPI:BSPIM:state_0\ * \SPI:BSPIM:cnt_enable\
-            + \SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * \SPI:BSPIM:cnt_enable\
-        );
-        Output = \SPI:BSPIM:cnt_enable\ (fanout=3)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=\PWM:PWMUDB:status_2\, Mode=(Combinatorial) @ [UDB=(2,3)][LB=0][MC=1]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \PWM:PWMUDB:runmode_enable\ * \PWM:PWMUDB:tc_i\
-        );
-        Output = \PWM:PWMUDB:status_2\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-LAB@[UDB=(2,3)][LB=1] #macrocells=4, #inputs=4, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=\PWM:PWMUDB:status_0\, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\PWM:PWMUDB:status_0\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=0]
         Total # of inputs        : 2
         Total # of product terms : 1
         List of special equations: 
@@ -2439,7 +2299,7 @@ LAB@[UDB=(2,3)][LB=1] #macrocells=4, #inputs=4, #pterms=4
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\PWM:PWMUDB:runmode_enable\, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=1]
+    [McSlotId=1]:     MacroCell: Name=\PWM:PWMUDB:runmode_enable\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=1]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -2454,7 +2314,7 @@ LAB@[UDB=(2,3)][LB=1] #macrocells=4, #inputs=4, #pterms=4
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=\PWM:PWMUDB:prevCompare1\, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=2]
+    [McSlotId=2]:     MacroCell: Name=\PWM:PWMUDB:prevCompare1\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=2]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -2469,7 +2329,7 @@ LAB@[UDB=(2,3)][LB=1] #macrocells=4, #inputs=4, #pterms=4
         {
         }
 
-    [McSlotId=3]:     MacroCell: Name=Net_300, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=3]
+    [McSlotId=3]:     MacroCell: Name=Net_300, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=3]
         Total # of inputs        : 2
         Total # of product terms : 1
         List of special equations: 
@@ -2557,40 +2417,149 @@ controlcell: Name =\PWM:PWMUDB:genblk1:ctrlreg\
     Clock Polarity: Active High
     Clock Enable: True
 
-UDB [UDB=(2,4)] is empty.
-UDB [UDB=(2,5)] is empty.
-UDB [UDB=(3,0)] is empty.
-UDB [UDB=(3,1)] contents:
-LAB@[UDB=(3,1)][LB=1] #macrocells=1, #inputs=11, #pterms=7
+UDB [UDB=(2,3)] contents:
+LAB@[UDB=(2,3)][LB=0] #macrocells=1, #inputs=4, #pterms=2
 {
-    [McSlotId=0]:     MacroCell: Name=Net_23, Mode=(D-Register) @ [UDB=(3,1)][LB=1][MC=0]
-        Total # of inputs        : 11
-        Total # of product terms : 7
+    [McSlotId=0]: (empty)
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]:     MacroCell: Name=Net_25, Mode=(D-Register) @ [UDB=(2,3)][LB=0][MC=3]
+        Total # of inputs        : 4
+        Total # of product terms : 2
         List of special equations: 
             Clock  = (\SPI:Net_276\) => Global
             Clock Enable: True
-        Main Equation            : 7 pterms
-        !(
-              !Net_23 * !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\
-            + !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
-              !\SPI:BSPIM:count_2\ * \SPI:BSPIM:count_1\ * 
-              !\SPI:BSPIM:count_0\ * !\SPI:BSPIM:ld_ident\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+        Main Equation            : 2 pterms
+        (
+              Net_25 * \SPI:BSPIM:state_1\ * \SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
               \SPI:BSPIM:state_0\
-            + \SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:mosi_from_dp\
-            + !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:mosi_from_dp\
         );
-        Output = Net_23 (fanout=2)
+        Output = Net_25 (fanout=2)
+        Properties               : 
+        {
+        }
+}
+
+LAB@[UDB=(2,3)][LB=1] #macrocells=1, #inputs=9, #pterms=4
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]: (empty)
+    [McSlotId=2]:     MacroCell: Name=\SPI:BSPIM:load_cond\, Mode=(T-Register) @ [UDB=(2,3)][LB=1][MC=2]
+        Total # of inputs        : 9
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:count_4\ * 
+              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
+              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
+              \SPI:BSPIM:load_cond\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:load_cond\
+            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:count_4\ * 
+              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
+              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
+              \SPI:BSPIM:load_cond\
+            + \SPI:BSPIM:state_0\ * !\SPI:BSPIM:count_4\ * 
+              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
+              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
+              \SPI:BSPIM:load_cond\
+        );
+        Output = \SPI:BSPIM:load_cond\ (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=1]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+controlcell: Name =\Ctrl:Sync:ctrl_reg\
+    PORT MAP (
+        control_7 => Net_47 ,
+        control_6 => Net_46 ,
+        control_5 => Net_45 ,
+        control_4 => Net_44 ,
+        control_3 => Net_43 ,
+        control_2 => Net_42 ,
+        control_1 => Net_41 ,
+        control_0 => Net_40 );
+    Properties:
+    {
+        cy_ctrl_mode_0 = "00000000"
+        cy_ctrl_mode_1 = "00000000"
+        cy_ext_reset = 0
+        cy_force_order = 1
+        cy_init_value = "00110000"
+    }
+    Clock Enable: True
+
+UDB [UDB=(2,4)] is empty.
+UDB [UDB=(2,5)] is empty.
+UDB [UDB=(3,0)] is empty.
+UDB [UDB=(3,1)] contents:
+LAB@[UDB=(3,1)][LB=0] #macrocells=1, #inputs=10, #pterms=3
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:state_2\, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=1]
+        Total # of inputs        : 10
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:count_4\ * 
+              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
+              \SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
+              !\SPI:BSPIM:ld_ident\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              \SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
+              \SPI:BSPIM:count_0\ * !\SPI:BSPIM:tx_status_1\
+        );
+        Output = \SPI:BSPIM:state_2\ (fanout=12)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(3,1)][LB=1] #macrocells=1, #inputs=10, #pterms=4
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:state_1\, Mode=(T-Register) @ [UDB=(3,1)][LB=1][MC=1]
+        Total # of inputs        : 10
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              \SPI:BSPIM:count_2\ * !\SPI:BSPIM:count_1\ * 
+              \SPI:BSPIM:count_0\ * !\SPI:BSPIM:tx_status_1\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_0\
+            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              !\SPI:BSPIM:count_2\ * \SPI:BSPIM:count_1\ * 
+              !\SPI:BSPIM:count_0\ * !\SPI:BSPIM:ld_ident\
+        );
+        Output = \SPI:BSPIM:state_1\ (fanout=12)
+        Properties               : 
+        {
+        }
+
     [McSlotId=2]: (empty)
     [McSlotId=3]: (empty)
 }
@@ -2636,12 +2605,82 @@ datapathcell: Name =\SPI:BSPIM:sR8:Dp:u0\
     Clock Enable: True
 
 UDB [UDB=(3,2)] contents:
-LAB@[UDB=(3,2)][LB=0] #macrocells=1, #inputs=4, #pterms=4
+LAB@[UDB=(3,2)][LB=0] #macrocells=1, #inputs=11, #pterms=7
+{
+    [McSlotId=0]:     MacroCell: Name=Net_23, Mode=(D-Register) @ [UDB=(3,2)][LB=0][MC=0]
+        Total # of inputs        : 11
+        Total # of product terms : 7
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 7 pterms
+        !(
+              !Net_23 * !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\
+            + !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              !\SPI:BSPIM:count_2\ * \SPI:BSPIM:count_1\ * 
+              !\SPI:BSPIM:count_0\ * !\SPI:BSPIM:ld_ident\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\
+            + \SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\
+            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:mosi_from_dp\
+            + !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:mosi_from_dp\
+        );
+        Output = Net_23 (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(3,2)][LB=1] #macrocells=1, #inputs=3, #pterms=1
 {
     [McSlotId=0]: (empty)
     [McSlotId=1]: (empty)
     [McSlotId=2]: (empty)
-    [McSlotId=3]:     MacroCell: Name=Net_89, Mode=(D-Register) @ [UDB=(3,2)][LB=0][MC=3]
+    [McSlotId=3]:     MacroCell: Name=\SPI:BSPIM:tx_status_0\, Mode=(Combinatorial) @ [UDB=(3,2)][LB=1][MC=3]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              \SPI:BSPIM:state_0\
+        );
+        Output = \SPI:BSPIM:tx_status_0\ (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+statusicell: Name =\SPI:BSPIM:TxStsReg\
+    PORT MAP (
+        clock => \SPI:Net_276\ ,
+        status_4 => \SPI:BSPIM:tx_status_4\ ,
+        status_3 => \SPI:BSPIM:load_rx_data\ ,
+        status_2 => \SPI:BSPIM:tx_status_2\ ,
+        status_1 => \SPI:BSPIM:tx_status_1\ ,
+        status_0 => \SPI:BSPIM:tx_status_0\ );
+    Properties:
+    {
+        cy_force_order = 1
+        cy_int_mask = "0000000"
+        cy_md_select = "0001001"
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(3,3)] contents:
+LAB@[UDB=(3,3)][LB=0] #macrocells=2, #inputs=10, #pterms=5
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]:     MacroCell: Name=Net_89, Mode=(D-Register) @ [UDB=(3,3)][LB=0][MC=1]
         Total # of inputs        : 4
         Total # of product terms : 4
         List of special equations: 
@@ -2660,73 +2699,8 @@ LAB@[UDB=(3,2)][LB=0] #macrocells=1, #inputs=4, #pterms=4
         Properties               : 
         {
         }
-}
 
-LAB@[UDB=(3,2)][LB=1] #macrocells=1, #inputs=4, #pterms=3
-{
-    [McSlotId=0]: (empty)
-    [McSlotId=1]: (empty)
-    [McSlotId=2]: (empty)
-    [McSlotId=3]:     MacroCell: Name=\SPI:BSPIM:state_0\, Mode=(T-Register) @ [UDB=(3,2)][LB=1][MC=3]
-        Total # of inputs        : 4
-        Total # of product terms : 3
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 3 pterms
-        (
-              !\SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\
-            + !\SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
-              !\SPI:BSPIM:tx_status_1\
-        );
-        Output = \SPI:BSPIM:state_0\ (fanout=12)
-        Properties               : 
-        {
-        }
-}
-
-UDB [UDB=(3,3)] contents:
-LAB@[UDB=(3,3)][LB=0] #macrocells=1, #inputs=9, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=\SPI:BSPIM:load_cond\, Mode=(T-Register) @ [UDB=(3,3)][LB=0][MC=0]
-        Total # of inputs        : 9
-        Total # of product terms : 4
-        List of special equations: 
-            Clock  = (\SPI:Net_276\) => Global
-            Clock Enable: True
-        Main Equation            : 4 pterms
-        (
-              !\SPI:BSPIM:state_2\ * !\SPI:BSPIM:count_4\ * 
-              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
-              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
-              \SPI:BSPIM:load_cond\
-            + \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
-              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:load_cond\
-            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:count_4\ * 
-              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
-              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
-              \SPI:BSPIM:load_cond\
-            + \SPI:BSPIM:state_0\ * !\SPI:BSPIM:count_4\ * 
-              !\SPI:BSPIM:count_3\ * !\SPI:BSPIM:count_2\ * 
-              !\SPI:BSPIM:count_1\ * !\SPI:BSPIM:count_0\ * 
-              \SPI:BSPIM:load_cond\
-        );
-        Output = \SPI:BSPIM:load_cond\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]: (empty)
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-LAB@[UDB=(3,3)][LB=1] #macrocells=1, #inputs=6, #pterms=1
-{
-    [McSlotId=0]: (empty)
-    [McSlotId=1]: (empty)
-    [McSlotId=2]:     MacroCell: Name=\SPI:BSPIM:rx_status_6\, Mode=(Combinatorial) @ [UDB=(3,3)][LB=1][MC=2]
+    [McSlotId=2]:     MacroCell: Name=\SPI:BSPIM:rx_status_6\, Mode=(Combinatorial) @ [UDB=(3,3)][LB=0][MC=2]
         Total # of inputs        : 6
         Total # of product terms : 1
             Clock Enable: True
@@ -2741,6 +2715,35 @@ LAB@[UDB=(3,3)][LB=1] #macrocells=1, #inputs=6, #pterms=1
         {
         }
 
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(3,3)][LB=1] #macrocells=1, #inputs=9, #pterms=3
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]:     MacroCell: Name=\SPI:BSPIM:ld_ident\, Mode=(T-Register) @ [UDB=(3,3)][LB=1][MC=1]
+        Total # of inputs        : 9
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\SPI:Net_276\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              \SPI:BSPIM:state_2\ * !\SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\ * !\SPI:BSPIM:ld_ident\
+            + \SPI:BSPIM:state_2\ * \SPI:BSPIM:state_1\ * 
+              !\SPI:BSPIM:state_0\ * \SPI:BSPIM:ld_ident\
+            + \SPI:BSPIM:state_1\ * !\SPI:BSPIM:state_0\ * 
+              !\SPI:BSPIM:count_4\ * !\SPI:BSPIM:count_3\ * 
+              !\SPI:BSPIM:count_2\ * \SPI:BSPIM:count_1\ * 
+              !\SPI:BSPIM:count_0\ * \SPI:BSPIM:ld_ident\
+        );
+        Output = \SPI:BSPIM:ld_ident\ (fanout=4)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]: (empty)
     [McSlotId=3]: (empty)
 }
 
@@ -2769,6 +2772,7 @@ Intr container @ [IntrContainer=(0)]:
         Properties:
         {
             int_type = "10"
+            is_nmi = 0
         }
   Intr@ [IntrContainer=(0)][IntrId=(6)] 
     interrupt: Name =isr_INTB
@@ -2777,6 +2781,7 @@ Intr container @ [IntrContainer=(0)]:
         Properties:
         {
             int_type = "10"
+            is_nmi = 0
         }
 Drq container @ [DrqContainer=(0)]: empty
 Port 0 is empty
@@ -2848,7 +2853,7 @@ Port 1 generates interrupt for logical port:
         }
     and contains the following IO cells:
 [IoId=2]: 
-Pin : Name = TDC1000_TRG(0)
+Pin : Name = TDC1000_TRGG(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -2881,15 +2886,15 @@ Pin : Name = TDC1000_TRG(0)
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
-        pa_out => TDC1000_TRG(0)__PA ,
+        pa_out => TDC1000_TRGG(0)__PA ,
         input => Net_46 ,
-        pad => TDC1000_TRG(0)_PAD );
+        pad => TDC1000_TRGG(0)_PAD );
     Properties:
     {
     }
 
 [IoId=4]: 
-Pin : Name = TDC7200_TRG(0)
+Pin : Name = TDC7200_TRGG(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -2922,9 +2927,9 @@ Pin : Name = TDC7200_TRG(0)
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
-        pa_out => TDC7200_TRG(0)__PA ,
+        pa_out => TDC7200_TRGG(0)__PA ,
         input => Net_47 ,
-        pad => TDC7200_TRG(0)_PAD );
+        pad => TDC7200_TRGG(0)_PAD );
     Properties:
     {
     }
@@ -3610,6 +3615,7 @@ Pin : Name = \UART:tx(0)\
     }
 
 Port 15 is empty
+ARM group 0: empty
 CAN 2.0b group 0: empty
 Cache group 0: empty
 CapSense group 0: empty
@@ -3665,8 +3671,8 @@ Port Configuration report
      |     |       | Interrupt |                  |                  | 
 Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connections
 -----+-----+-------+-----------+------------------+------------------+------------------
-   1 |   2 |     * |      NONE |         CMOS_OUT |   TDC1000_TRG(0) | In(Net_46)
-     |   4 |     * |      NONE |         CMOS_OUT |   TDC7200_TRG(0) | In(Net_47)
+   1 |   2 |     * |      NONE |         CMOS_OUT |  TDC1000_TRGG(0) | In(Net_46)
+     |   4 |     * |      NONE |         CMOS_OUT |  TDC7200_TRGG(0) | In(Net_47)
      |   5 |     * |   FALLING |      RES_PULL_UP |  TDC1000_ERRB(0) | 
 -----+-----+-------+-----------+------------------+------------------+------------------
    2 |   0 |     * |   FALLING |      RES_PULL_UP |  TDC1000_INTB(0) | 
@@ -3688,33 +3694,33 @@ Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connectio
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.019ms
-Digital Placement phase: Elapsed time ==> 13s.700ms
+Digital component placer commit/Report: Elapsed time ==> 0s.290ms
+Digital Placement phase: Elapsed time ==> 45s.935ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
-Digital Routing phase: Elapsed time ==> 22s.200ms
+Digital Routing phase: Elapsed time ==> 36s.236ms
 </CYPRESSTAG>
-<CYPRESSTAG name="Bitstream and API generation">
-Bitstream and API generation phase: Elapsed time ==> 4s.710ms
+<CYPRESSTAG name="Bitstream Generation">
+Bitstream Generation phase: Elapsed time ==> 9s.504ms
 </CYPRESSTAG>
-<CYPRESSTAG name="Bitstream verification">
-Bitstream verification phase: Elapsed time ==> 1s.300ms
+<CYPRESSTAG name="Bitstream Verification">
+Bitstream Verification phase: Elapsed time ==> 1s.441ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Warning: sta.M0021: BothTDC_timing.html: Warning-1350: Asynchronous path(s) exist from "clk_1(routed)" to "CyBUS_CLK". See the timing report for details. (File=C:\Users\Xwx47\Desktop\PSoC_TDC_test\BothTDC.cydsn\BothTDC_timing.html)
 Timing report is in BothTDC_timing.html.
-Static timing analysis phase: Elapsed time ==> 4s.919ms
+Static timing analysis phase: Elapsed time ==> 9s.310ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
-Data reporting phase: Elapsed time ==> 0s.000ms
+Data reporting phase: Elapsed time ==> 0s.103ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 2s.070ms
+Design database save phase: Elapsed time ==> 4s.371ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 57s.370ms
+cydsfit: Elapsed time ==> 134s.488ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 58s.040ms
-API generation phase: Elapsed time ==> 12s.700ms
-Dependency generation phase: Elapsed time ==> 0s.370ms
-Cleanup phase: Elapsed time ==> 0s.189ms
+Fitter phase: Elapsed time ==> 134s.790ms
+API generation phase: Elapsed time ==> 29s.094ms
+Dependency generation phase: Elapsed time ==> 0s.834ms
+Cleanup phase: Elapsed time ==> 0s.084ms

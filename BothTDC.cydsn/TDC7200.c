@@ -19,10 +19,14 @@
 
 #define TDC7200_EN_POS      0
 #define TDC7200_nSS_POS     5
-#define TDC7200_TRG_POS     6
+#define TDC7200_TRGG_POS    7
 
 #define SET_PIN(INDEX)      (Ctrl_Control = Ctrl_Control | (1 << INDEX))
 #define CLEAR_PIN(INDEX)    (Ctrl_Control = Ctrl_Control & ~(1 << INDEX))
+#define TOGGLE_PIN(INDEX)   do{SET_PIN(INDEX); \
+                                CyDelay(1); \
+                                CLEAR_PIN(INDEX); \
+                                }while(0)
 
 void TDC7200_Start(TDC7200_INIT_t* tdc){
     TDC7200_setConfig(tdc, true);
@@ -32,6 +36,10 @@ void TDC7200_Start(TDC7200_INIT_t* tdc){
 void TDC7200_Enable(void){
     /* El pin EN del TDC7200 debe estar a 1 lógico para poder usarlo*/
     SET_PIN(TDC7200_EN_POS);
+}
+
+void TDC7200_Trigger(void){
+    TOGGLE_PIN(TDC7200_TRGG_POS);
 }
 
 void TDC7200_setConfig(TDC7200_INIT_t* tdc, bool continuous){

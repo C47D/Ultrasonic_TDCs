@@ -64,6 +64,8 @@ bool TDC1000_readChannelSelect(void);
 uint8_t TDC1000_readClockFreqIn(void);
 void TDC1000_setClockFreqIn(uint32_t freq);
 
+void TDC1000_Trigger(void);
+
 void TDC1000_setCONFIG_0(uint8_t data);
 void TDC1000_setCONFIG_1(uint8_t data);
 void TDC1000_setCONFIG_2(uint8_t data);

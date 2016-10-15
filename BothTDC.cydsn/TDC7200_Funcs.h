@@ -116,6 +116,7 @@ uint8_t TDC7200_ReadSingleRegister(uint8_t regAddr);
 uint32_t TDC7200_Read24bitRegister(uint32_t regAddr);
 void TDC7200_ReadAutoincrementRegister(uint8_t regAddr, uint8_t *data, size_t size);
 
+void TDC7200_Trigger(void);
 
 #ifdef __cplusplus
 }

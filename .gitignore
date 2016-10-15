@@ -21,3 +21,9 @@ ComponentUpdateLog.txt
 
 # PSoC 4 based projects
 *.cydsn/CortexM0/
+
+# new PSoC 4 families based projects
+*.cydsn/CortexM0p/
+
+# Update files
+*.txt
