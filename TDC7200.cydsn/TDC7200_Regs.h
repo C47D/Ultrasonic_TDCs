@@ -1,48 +1,42 @@
-/*
- * @file TDC7200.h
- * @author Carlos Diaz | IIMAS
- * @version v0_1
- * @date 24-Abril-2016
- * @brief Este archivo contiene todos los prototipos
- * de las funciones para el driver del TDC TDC7200
-*/
-
-#ifndef TDC7200_H
-#define TDC7200_H
-
-#ifdef __cplusplus
- extern "C"
-{
-#endif
-
-/* External includes  */
-#include <cytypes.h>
-#include <stdbool.h>
+/* Provided as is */
 
 /***** Register addresses *****/
-#define TDC7200_CONFIG1_ADDR            0x00u
-#define TDC7200_CONFIG2_ADDR            0x01u
-#define TDC7200_INT_STATUS_ADDR         0x02u
-#define TDC7200_INT_MASK_ADDR           0x03u
-#define TDC7200_COARSE_CNTR_OVF_H       0x04u
-#define TDC7200_COARSE_CNTR_OVF_L       0x05u
-#define TDC7200_CLOCK_CNTR_OVF_H        0x06u
-#define TDC7200_CLOCK_CNTR_OVF_L        0x07u
-#define TDC7200_CLOCK_CNTR_STOP_MASK_H  0x08u
-#define TDC7200_CLOCK_CNTR_STOP_MASK_L  0x09u
-#define TDC7200_TIME1_ADDR              0x10u // Solo lectura
-#define TDC7200_CLOCK_COUNT1_ADDR       0x11u // Solo lectura
-#define TDC7200_TIME2_ADDR              0x12u // Solo lectura
-#define TDC7200_CLOCK_COUNT2_ADDR       0x13u // Solo lectura
-#define TDC7200_TIME3_ADDR              0x14u // Solo lectura
-#define TDC7200_CLOCK_COUNT3_ADDR       0x15u // Solo lectura
-#define TDC7200_TIME4_ADDR              0x16u // Solo lectura
-#define TDC7200_CLOCK_COUNT4_ADDR       0x17u // Solo lectura
-#define TDC7200_TIME5_ADDR              0x18u // Solo lectura
-#define TDC7200_CLOCK_COUNT5_ADDR       0x19u // Solo lectura
-#define TDC7200_TIME6_ADDR              0x1Au // Solo lectura
-#define TDC7200_CALIBRATION1_ADDR       0x1Bu // Solo lectura
-#define TDC7200_CALIBRATION2_ADDR       0x1Cu // Solo lectura
+#define TDC7200_CONFIG1_ADDR            0x00
+#define TDC7200_CONFIG2_ADDR            0x01
+#define TDC7200_INT_STATUS_ADDR         0x02
+#define TDC7200_INT_MASK_ADDR           0x03
+#define TDC7200_COARSE_CNTR_OVF_H_ADDR       0x04
+#define TDC7200_COARSE_CNTR_OVF_L_ADDR       0x05
+#define TDC7200_CLOCK_CNTR_OVF_H_ADDR        0x06
+#define TDC7200_CLOCK_CNTR_OVF_L_ADDR        0x07
+#define TDC7200_CLOCK_CNTR_STOP_MASK_H_ADDR  0x08
+#define TDC7200_CLOCK_CNTR_STOP_MASK_L_ADDR  0x09
+#define TDC7200_TIME1_ADDR              0x10 /* Read only */
+#define TDC7200_CLOCK_COUNT1_ADDR       0x11 /* Read only */
+#define TDC7200_TIME2_ADDR              0x12 /* Read only */
+#define TDC7200_CLOCK_COUNT2_ADDR       0x13 /* Read only */
+#define TDC7200_TIME3_ADDR              0x14 /* Read only */
+#define TDC7200_CLOCK_COUNT3_ADDR       0x15 /* Read only */
+#define TDC7200_TIME4_ADDR              0x16 /* Read only */
+#define TDC7200_CLOCK_COUNT4_ADDR       0x17 /* Read only */
+#define TDC7200_TIME5_ADDR              0x18 /* Read only */
+#define TDC7200_CLOCK_COUNT5_ADDR       0x19 /* Read only */
+#define TDC7200_TIME6_ADDR              0x1A /* Read only */
+#define TDC7200_CALIBRATION1_ADDR       0x1B /* Read only */
+#define TDC7200_CALIBRATION2_ADDR       0x1C /* Read only */
+
+/***** Register Masks (so we don't write to reserved bits) *****/
+
+#define TDC7200_CONFIG1_MASK            0xFF
+#define TDC7200_CONFIG2_MASK            0xFF
+#define TDC7200_INT_STATUS_MASK         0x1F
+#define TDC7200_INT_MASK_MASK           0x07
+#define TDC7200_COARSE_CNTR_OVF_H_MASK       0xFF
+#define TDC7200_COARSE_CNTR_OVF_L_MASK       0xFF
+#define TDC7200_CLOCK_CNTR_OVF_H_MASK        0xFF
+#define TDC7200_CLOCK_CNTR_OVF_L_MASK        0xFF
+#define TDC7200_CLOCK_CNTR_STOP_MASK_H_MASK  0xFF
+#define TDC7200_CLOCK_CNTR_STOP_MASK_L_MASK  0xFF
 
 /***** CONFIG1 Register *****/
 
@@ -125,33 +119,4 @@
 #define TDC7200_INT_MASK_CLOCK_CNTR_OVF_MASK_DISABLED   ((uint32_t)0x00 << TDC7200_INT_MASK_CLOCK_CNTR_OVF_MASK_Pos)
 #define TDC7200_INT_MASK_CLOCK_CNTR_OVF_MASK_ENABLED   ((uint32_t)0x01 << TDC7200_INT_MASK_CLOCK_CNTR_OVF_MASK_Pos)
 
-#define TDC7200_AUTO_INCREMENT_ON   (0x01 << 7)
-#define TDC7200_AUTO_INCREMENT_OFF  (0x00 << 7)
-#define TDC7200_READ_COMMAND        (0x00 << 6)
-#define TDC7200_WRITE_COMMAND       (0x01 << 6)
-
-void WriteSingleRegister(uint8_t regAddr, uint8_t data);
-void WriteAutoincrementRegister(uint8_t regAddr, uint8_t *data, uint8_t size);
-void ReadSingleRegister(uint8_t regAddr, uint8_t *data);
-void ReadAutoincrementRegister(uint8_t regAddr, uint8_t *data, uint8_t size);
-
-bool TDC7200_readToggleSetting(uint8_t toggle);
-void TDC7200_setToggle(uint8_t toogle);
-uint8_t TDC7200_readMode(void);
-uint8_t TDC7200_readCalibration2Periods(void);
-uint8_t TDC7200_readAvgCycles(void);
-uint8_t TCD7200_readNumStop(void);
-bool TDC7200_readEnable(void);
-void TDC7200_setEnable(bool enable);
-void TDC7200_setClockFreqIn(uint32_t freq);
-uint8_t TDC7200_readCalibrationPeriods(void);
-double TDC7200_readToF(void);
-void TDC7200_forceMeasurementRead(void);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif	/* TDC7200_H  */
-
-/* End of file  */
+/* [] END OF FILE */

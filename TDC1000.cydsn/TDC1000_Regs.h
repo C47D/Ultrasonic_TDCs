@@ -1,24 +1,4 @@
-/*
- * @file TDC1000.h
- * @author Carlos Diaz | IIMAS
- * @version v0_1
- * @date 24-Abril-2016
- * @brief Este archivo contiene todos los prototipos
- * de las funciones para el driver del AFE TDC1000
-*/
-
-#ifndef TDC1000_H_
-#define TDC1000_H_
-
-#ifdef __cplusplus
- extern "C"
-{
-#endif
-
-/* External includes  */
-#include <cytypes.h>
-#include <stdbool.h>
-/* Contants */
+/* Provided as is */
 
 /***** Register addresses *****/
 
@@ -32,6 +12,19 @@
 #define TDC1000_ERROR_FLAGS_ADDR 0x07
 #define TDC1000_TIMEOUT_ADDR    0x08
 #define TDC1000_CLOCK_RATE_ADDR 0x09
+
+/***** Register Masks (so we don't write to reserved bits) *****/
+
+#define TDC1000_CONFIG_0_MASK   0xFF
+#define TDC1000_CONFIG_1_MASK   0x3F
+#define TDC1000_CONFIG_2_MASK   0xFF
+#define TDC1000_CONFIG_3_MASK   0x7F
+#define TDC1000_CONFIG_4_MASK   0X7F
+#define TDC1000_TOF_1_MASK      0xFF
+#define TDC1000_TOF_0_MASK      0xFF
+#define TDC1000_ERROR_FLAGS_MASK 0x07
+#define TDC1000_TIMEOUT_MASK    0x7F
+#define TDC1000_CLOCK_RATE_MASK 0x07
 
 /***** CONFIG_0 Register  *****/
 #define TDC1000_CONFIG_0_NUM_TX_MASK 0x1F
@@ -222,56 +215,4 @@
 #define TDC1000_CLOCK_RATE_CLOCKIN_DIV_DIVBY1  ((uint32_t)0x00 << TDC1000_CLOCK_RATE_CLOCKIN_DIV_Pos)
 #define TDC1000_CLOCK_RATE_CLOCKIN_DIV_DIVBY2  ((uint32_t)0x01 << TDC1000_CLOCK_RATE_CLOCKIN_DIV_Pos)
 
-/* SPI Commands */
-#define READ_CMD    0x00
-#define WRITE_CMD   0x40
-#define DUMMY_BYTE  0x00
-
-/* Functions */
-void TDC1000_setCONFIG_0(uint8_t value);
-void TDC1000_setCONFIG_1(uint8_t value);
-void TDC1000_setCONFIG_2(uint8_t value);
-void TDC1000_setCONFIG_3(uint8_t value);
-void TDC1000_setCONFIG_4(uint8_t value);
-void TDC1000_setTOF_1(uint8_t value);
-void TDC1000_setTOF_0(uint8_t value);
-void TDC1000_setERROR_FLAGS(uint8_t value);
-void TDC1000_setTIMEOUT(uint8_t value);
-void TDC1000_setCLOCK_RATE(uint8_t value);
-uint8_t TDC1000_getCONFIG_0(void);
-uint8_t TDC1000_getCONFIG_1(void);
-uint8_t TDC1000_getCONFIG_2(void);
-uint8_t TDC1000_getCONFIG_3(void);
-uint8_t TDC1000_getCONFIG_4(void);
-uint8_t TDC1000_getTOF_1(void);
-uint8_t TDC1000_getTOF_0(void);
-uint8_t TDC1000_getERROR_FLAGS(void);
-uint8_t TDC1000_getTIMEOUT(void);
-uint8_t TDC1000_getCLOCK_RATE(void);
-
-uint8_t TDC1000_readModeSelect(void);
-uint8_t TDC1000_readTXFreqDiv(void);
-uint8_t TDC1000_readNumTX(void);
-uint8_t TDC1000_readNumAvg(void);
-uint8_t TDC1000_readNumRX(void);
-uint8_t TDC1000_readEchoQualThld(void);
-uint8_t TDC1000_readTXPhShiftPos(void);
-uint8_t TDC1000_readPGAGain(void);
-uint8_t TDC1000_readTimingReg(void);
-uint8_t TDC1000_readShortToFBlankPeriod(void);
-uint8_t TDC1000_readToFTimeoutCtrl(void);
-uint8_t TDC1000_readAutozeroPeriod(void);
-void TDC1000_setEnable(bool enable);
-bool TDC1000_getEnable(void);
-void TDC1000_reset(void);
-bool TDC1000_readChannelSelect(void);
-uint8_t TDC1000_readClockFreqIn(void);
-void TDC1000_setClockFreqIn(uint32_t freq);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif	/* TDC1000_H_  */
-
-/* End of file  */
+/* [] END OF FILE */

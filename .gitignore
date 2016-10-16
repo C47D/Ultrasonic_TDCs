@@ -27,3 +27,10 @@ ComponentUpdateLog.txt
 
 # Update files
 *.txt
+
+# Build files
+*.cydsn/*.cycdx
+*.cydsn/*.cyfit
+*.cydsn/*.rpt
+*.cydsn/*.svd
+*.cydsn/*.html

@@ -1,52 +1,69 @@
 #include <project.h>
-#include "TDC1000.h"
+#include <stdbool.h>
+
+#include "cyapicallbacks.h"
+
+#include "TDC1000_Regs.h"
+#include "TDC1000_Funcs.h"
+
+void printTDC(TDC1000_INIT_t* tdc1000);
 
 int main(){
 
     CyGlobalIntEnable;
     
     SPI_Start();
+    UART_Start();
+    isr_ERRB_Start();
+    
+    TDC1000_INIT_t tdc1000;
     
     for(;;){
-        TDC1000_setCONFIG_0(0xDE);
-        TDC1000_setCONFIG_1(0xAD);
-        TDC1000_setCONFIG_2(0xc0);
-        TDC1000_setCONFIG_3(0xde);
-        TDC1000_setCONFIG_4(0xde);
-        TDC1000_setTOF_0(0xc0);
-        TDC1000_setTOF_1(0x0f);
-        TDC1000_setERROR_FLAGS(0xfe);
-        TDC1000_setTIMEOUT(0xba);
-        TDC1000_setCLOCK_RATE(0xbe);
-        (void)TDC1000_getCONFIG_0();
-        (void)TDC1000_getCONFIG_1();
-        (void)TDC1000_getCONFIG_2();
-        (void)TDC1000_getCONFIG_3();
-        (void)TDC1000_getCONFIG_4();
-        (void)TDC1000_getTOF_0();
-        (void)TDC1000_getTOF_1();
-        (void)TDC1000_getERROR_FLAGS();
-        (void)TDC1000_getTIMEOUT();
-        (void)TDC1000_getCLOCK_RATE();
-        
-        SPI_ClearRxBuffer();
-        SPI_ClearTxBuffer();
-        Ctlr_Write(0);
-        SPI_WriteTxData(WRITE_CMD | 0x0A);
-        SPI_WriteTxData(0xff);
-        while(!(SPI_ReadTxStatus() & SPI_STS_SPI_IDLE));
-        Ctlr_Write(1);
-        SPI_ClearRxBuffer();
-        SPI_ClearTxBuffer();
-        Ctlr_Write(0);
-        SPI_WriteTxData(READ_CMD | 0x0A);
-        SPI_WriteTxData(DUMMY_BYTE);
-        (void)SPI_ReadRxData(); // Dummy read
-        (void)SPI_ReadRxData();
-        while(!(SPI_ReadTxStatus() & SPI_STS_SPI_IDLE));
-        Ctlr_Write(1);
-        CyDelayUs(10);
+        TDC1000_Trigger();
+        TDC1000_getConfig(&tdc1000, false);
+        printTDC(&tdc1000);
+        CyDelay(50);
     }
+}
+
+void printTDC(TDC1000_INIT_t* tdc1000){
+    if(tdc1000 != NULL){
+        UART_PutString("Registros TDC1000\r\n");
+        UART_PutString("CONFIG_0 \t");
+        UART_PutHexByte(tdc1000->CONFIG_0);
+        UART_PutCRLF();
+        UART_PutString("CONFIG_1 \t");
+        UART_PutHexByte(tdc1000->CONFIG_1);
+        UART_PutCRLF();
+        UART_PutString("CONFIG_2 \t");
+        UART_PutHexByte(tdc1000->CONFIG_2);
+        UART_PutCRLF();
+        UART_PutString("CONFIG_3 \t");
+        UART_PutHexByte(tdc1000->CONFIG_3);
+        UART_PutCRLF();
+        UART_PutString("CONFIG_4 \t");
+        UART_PutHexByte(tdc1000->CONFIG_4);
+        UART_PutCRLF();
+        UART_PutString("TOF_1 \t");
+        UART_PutHexByte(tdc1000->TOF_1);
+        UART_PutCRLF();
+        UART_PutString("TOF_0 \t");
+        UART_PutHexByte(tdc1000->TOF_0);
+        UART_PutCRLF();
+        UART_PutString("TIMEOUT \t");
+        UART_PutHexByte(tdc1000->TIMEOUT);
+        UART_PutCRLF();
+        UART_PutString("CLOCK_RATE \t");
+        UART_PutHexByte(tdc1000->CLOCK_RATE);
+        UART_PutCRLF();
+        UART_PutString("ERROR_FLAGS \t");
+        UART_PutHexByte(tdc1000->ERROR_FLAGS);
+        UART_PutCRLF();
+    }
+}
+
+void isr_ERRB_Interrupt_InterruptCallback(void){
+    isr_ERRB_ClearPending();
 }
 
 /* [] END OF FILE */
